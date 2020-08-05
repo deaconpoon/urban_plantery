@@ -1,0 +1,25 @@
+.specialty {
+  &__container {
+    height: 60vh;
+    margin-bottom: $section-bottom;
+  }
+}
+.carousel-item {
+  height: 60vh;
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 60vh;
+}
+.specialty-content {
+  width: 100%;
+
+  background-color: $maingreen;
+}
+.carousel-indicators li {
+  background-color: $maingreen;
+}
+.carousel-caption {
+  color: $grey;
+  font-family: $font-primary;
+}

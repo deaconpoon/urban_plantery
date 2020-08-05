@@ -1,0 +1,61 @@
+//MIXINS
+//fonts
+@mixin titleText() {
+  text-align: center;
+  text-transform: capitalize;
+  @include setFontAttr($font-xlarge, $font-mid-weight);
+  font-size: $font-xlarge;
+  font-weight: $font-mid-weight;
+}
+@mixin subTitleText($font-family) {
+  font-family: $font-family;
+  @include setFontAttr($font-large, $font-mid-weight);
+}
+@mixin setFontAttr($font-size, $font-weight, $line-height: 0) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+
+  @if $line-height != 0 {
+    line-height: $line-height;
+  }
+}
+
+//position
+@mixin flexCenter($flow-dirction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: $flow-dirction;
+}
+@mixin absoluteCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//styling
+@mixin formReset {
+  appearance: none;
+  background: none;
+  border: none;
+  color: white;
+}
+
+//screen size
+@mixin tablet() {
+  @media screen and (min-width: $tablet-break) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $desktop-break) {
+    @content;
+  }
+}
+@mixin lg-desktop() {
+  @media screen and (min-width: $lg-desktop-break) {
+    @content;
+  }
+}

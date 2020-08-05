@@ -1,0 +1,33 @@
+.hero {
+  background-image: $backdrop, url("../../asset/hero.jpg");
+  background-size: cover;
+
+  height: 100vh;
+  display: flex;
+
+  &__content {
+    @include flexCenter(column);
+    margin: auto;
+    padding: 0 1em;
+
+    color: $white;
+    &__title {
+      @include titleText();
+
+      font-family: $font-secondary;
+      margin-bottom: 1.5em;
+      max-width: 700px;
+    }
+
+    &__collection {
+      display: flex;
+
+      &--text {
+        padding: 1em;
+        background-color: $white;
+        border: 1px $grey solid;
+        color: $black;
+      }
+    }
+  }
+}
