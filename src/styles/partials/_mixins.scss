@@ -42,6 +42,12 @@
   color: white;
 }
 
+//transition
+@mixin appTransition($transition-type, $transition-time) {
+  transition-duration: $transition-type;
+  transition-timing-function: $transition-time;
+}
+
 //screen size
 @mixin tablet() {
   @media screen and (min-width: $tablet-break) {

@@ -5,3 +5,11 @@
 .hide {
   display: none;
 }
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.transition {
+  @include appTransition($app-transition-type, $app-transition-time);
+}

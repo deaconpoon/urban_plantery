@@ -7,8 +7,13 @@
       justify-content: space-between;
     }
     &__container {
-      @include tablet() {
-        display: none;
+      width: 70%;
+      &--2 {
+        height: 36px;
+        @include tablet() {
+          display: flex;
+          align-items: center;
+        }
       }
     }
     &__title {
@@ -21,39 +26,64 @@
         margin-bottom: 0;
       }
     }
+    &__sort {
+      margin-right: 1em;
+      @include tablet() {
+        margin-bottom: 0;
+      }
+    }
+    &__select {
+      padding: 0.5em 1em;
+    }
   }
   &__aside {
+    margin-bottom: $sub-title-bottom;
+    @include tablet() {
+      width: 20%;
+
+      margin-right: 2em;
+    }
     &__container {
+      margin-bottom: 1em;
       @include tablet() {
         display: none;
       }
     }
     &__filter {
       display: inline-block;
+      margin-right: 0.6em;
     }
     &__filter--arrow {
-      display: relative;
-      width: 1px;
-      height: 1px;
-    }
-    &__filter--arrow::after {
-      content: " ";
+      width: 10px;
+      height: 10px;
       display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-right: $link_underline;
-      border-bottom: $link_underline;
-      margin-left: 0.5rem;
-      transform: rotate(45deg);
-      position: absolute;
-      top: 6px;
+      padding-top: 0.2em;
     }
+
     &__list {
       @include tablet() {
-        display: flex;
+        display: contents;
       }
       &__item {
         margin-bottom: 1em;
+      }
+    }
+  }
+  &__section {
+    width: 100%;
+    @include tablet() {
+      display: grid;
+      grid: auto / repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 40px;
+    }
+  }
+  &__body {
+    &__container {
+      margin-bottom: $section-bottom;
+      @include tablet() {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }

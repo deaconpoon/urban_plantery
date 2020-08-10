@@ -1,19 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
-    <div className="product">
+    <li className="product">
       <div className="product__card">
         <img
           className="product__card__image"
-          src={require("../asset/new_product.jpg")}
+          src={product.image}
           alt="new-product"
         ></img>
-        <div className="product__card__name">plant</div>
-        <div className="product__card__price">$100</div>
-        <div className="product__card__rating">5 star</div>
+        <div className="product__card__name">
+          <Link to={"/product/" + product._id}>{product.name}</Link>
+        </div>
+        <div className="product__card__price">${product.price}</div>
+        {/*    <div className="product__card__rating">{product.rating}</div> */}
       </div>
-    </div>
+    </li>
   );
 };
 

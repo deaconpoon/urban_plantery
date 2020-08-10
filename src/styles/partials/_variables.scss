@@ -11,22 +11,32 @@ $lightgreen: #f2fffa;
 $font-primary: "Montserrat", sans-serif;
 $font-secondary: "Crimson Text", serif;
 $font-xlarge: 3rem;
-$font-large: 2rem;
+$font-large: 36px;
 $font-mid: 1rem;
+$font-price: 18px;
+$font-quantity: 1.2rem;
+
 $font-mid-weight: 600;
 $font-light-weight: 300;
 $font-title-space: 0.05em;
 $font-title-height: 3rem;
 $font-body-height: 2em;
 
-//MARGIN
+//MARGIN & PADDING
 $section-bottom: 10em;
 $sub-title-bottom: 3em;
-
+$text-bottom: 14px;
+$product-detail-top: 3rem;
+$product-detail-right: 3rem;
+$product-detail-left: 6rem;
 //GRADIENT
 $backdrop: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 //SHADOW
 $card-shadow: 0px 0px 29px 4px rgba(153, 153, 153, 1);
+
+//TRANSITION
+$app-transition-type: ease;
+$app-transition-time: 300ms;
 
 //BORDER
 $box-border: 1px $grey solid;

@@ -9,7 +9,7 @@ const NewProduct = () => {
           <div className="product__card">
             <img
               className="product__card__image"
-              src={require("../asset/new_product.jpg")}
+              src={require("../asset/product/plant_7.jpg")}
               alt="new-product"
             ></img>
             <div className="product__card__name">plant</div>
@@ -18,7 +18,7 @@ const NewProduct = () => {
           <div className="product__card">
             <img
               className="product__card__image"
-              src={require("../asset/new_product2.jpg")}
+              src={require("../asset/product/plant_8.jpg")}
               alt="new-product2"
             ></img>
             <div className="product__card__name">plant</div>

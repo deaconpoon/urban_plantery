@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
+import { products } from "./Data";
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -20,7 +21,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={require("../asset/Carousel/image1.jpg")}
+          src={require("../asset/product/plant_1.jpg")}
           alt="First slide"
         />
 
@@ -32,7 +33,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={require("../asset/Carousel/image2.jpg")}
+          src={require("../asset/product/plant_2.jpg")}
           alt="Second slide"
         />
 
@@ -44,7 +45,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={require("../asset/Carousel/image3.jpg")}
+          src={require("../asset/product/plant_3.jpg")}
           alt="Third slide"
         />
 

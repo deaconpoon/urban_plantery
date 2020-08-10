@@ -12,7 +12,7 @@ const About = () => {
           <div className="about__body__main__container">
             <img
               className="about__body__main__image"
-              src={require("../asset/portrait_2.jpg")}
+              src={require("../asset/product/plant_5.jpg")}
               alt="portrait"
             ></img>
             <div className="about__body__main__text">
@@ -26,7 +26,7 @@ const About = () => {
           <div className="about__body__main__container--2">
             <img
               className="about__body__main__image"
-              src={require("../asset/portrait.jpg")}
+              src={require("../asset/product/plant_6.jpg")}
               alt="protrait-2"
             ></img>
           </div>
