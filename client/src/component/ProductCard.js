@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
-    <li className="product">
+    <li key={product._id} className="product">
       <div className="product__card">
         <img
           className="product__card__image"
@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
           alt="new-product"
         ></img>
         <div className="product__card__name">
-          <Link to={"/product/" + product._id}>{product.name}</Link>
+          <Link to={"/products/" + product._id}>{product.name}</Link>
         </div>
         <div className="product__card__price">${product.price}</div>
         {/*    <div className="product__card__rating">{product.rating}</div> */}

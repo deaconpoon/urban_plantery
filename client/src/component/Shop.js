@@ -1,9 +1,20 @@
-import React, { useState } from "react";
-import data from "./Data";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+
 import ProductCard from "./ProductCard";
+import { listProducts } from "../actions/ProductActions";
 
 const Shop = () => {
   const [filtered, setFiltered] = useState(false);
+
+  const productList = useSelector((state) => state.productList);
+  const { products, loading, error } = productList;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(listProducts());
+  }, []);
 
   const openFilter = () => {
     document.querySelector(".shop__aside__list").classList.add("hide");
@@ -25,7 +36,11 @@ const Shop = () => {
     return filtered ? closeFilter() : openFilter();
   };
 
-  return (
+  return loading ? (
+    <div> Loading... </div>
+  ) : error ? (
+    <div> {error} </div>
+  ) : (
     <div className="section">
       <div className="shop">
         <section className="shop__header">
@@ -53,20 +68,30 @@ const Shop = () => {
               <div className="shop__aside__filter transition">Filter</div>
               <div className="shop__aside__filter--arrow transition">
                 <img
+                  alt="arrow"
                   src={require("../asset/arrow.svg")}
                   className="shop__aside__filter--arrow--img"
                 ></img>
               </div>
             </div>
+
             <ul className="shop__aside__list">
-              <li className="shop__aside__list__item">All</li>
-              <li className="shop__aside__list__item">Calathea</li>
-              <li className="shop__aside__list__item">Pothos</li>
-              <li className="shop__aside__list__item">Monstera</li>
+              <li key="genus" className="shop__aside__list__item">
+                All
+              </li>
+              <li key="genus" className="shop__aside__list__item">
+                Calathea
+              </li>
+              <li key="genus" className="shop__aside__list__item">
+                Pothos
+              </li>
+              <li key="genus" className="shop__aside__list__item">
+                Monstera
+              </li>
             </ul>
           </aside>
           <section className="shop__section">
-            {data.products.map((product) => (
+            {products.map((product) => (
               <ProductCard product={product}></ProductCard>
             ))}
           </section>
