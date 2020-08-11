@@ -28,38 +28,44 @@ const Product = (props) => {
 
   return (
     <section className="section">
-      <div className="product__detail">
-        <div className="product__detail__container">
-          <img
-            className="product__detail__image"
-            alt="product"
-            src="../asset/product/plant_2.jpg"
-          ></img>
-        </div>
-        <div className="product__detail__container--2">
-          <div className="product__detail__name">{Object.entries(product)}</div>
-          <div className="product__detail__price">$ </div>
-          <div className="product__detail__container--3">
-            <div className="product__detail__quantity">Quantity</div>
-            <div className="product__detail__container--4">
-              <img
-                alt="arithmetic"
-                className="product__detail__arithmetic "
-                onClick={() => decrementQuantity()}
-                src={require("../asset/minus.svg")}
-              ></img>
-              <div className="product__detail__amount">{quantity}</div>
-              <img
-                alt="arithmetic"
-                className="product__detail__arithmetic"
-                onClick={() => incrementQuantity()}
-                src={require("../asset/plus.svg")}
-              ></img>
-            </div>
+      {loading ? (
+        <div>Loading... </div>
+      ) : error ? (
+        <div>{error}</div>
+      ) : (
+        <div className="product__detail">
+          <div className="product__detail__container">
+            <img
+              className="product__detail__image"
+              alt="product"
+              src={product.image}
+            ></img>
           </div>
-          <div className="product__detail__add">Add to Cart</div>
+          <div className="product__detail__container--2">
+            <div className="product__detail__name">{product.name}</div>
+            <div className="product__detail__price">$ {product.price}</div>
+            <div className="product__detail__container--3">
+              <div className="product__detail__quantity">Quantity</div>
+              <div className="product__detail__container--4">
+                <img
+                  alt="arithmetic"
+                  className="product__detail__arithmetic "
+                  onClick={() => decrementQuantity()}
+                  src={require("../asset/minus.svg")}
+                ></img>
+                <div className="product__detail__amount">{quantity}</div>
+                <img
+                  alt="arithmetic"
+                  className="product__detail__arithmetic"
+                  onClick={() => incrementQuantity()}
+                  src={require("../asset/plus.svg")}
+                ></img>
+              </div>
+            </div>
+            <div className="product__detail__add">Add to Cart</div>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
