@@ -1,24 +1,34 @@
-.main-nav {
+.nav {
   display: flex;
-  padding: 1em 2em;
 
   justify-content: space-between;
   width: 100%;
+  height: 70px;
 
-  &__logo-img {
-    width: 60%;
-    z-index: 999;
-  }
+  border-bottom: $link-underline;
 
   &__container {
     display: flex;
-
-    &--link {
-      font-family: $font-primary;
-      margin-left: 1em;
-      color: $white;
-      align-self: center;
-      font-weight: $font-mid-weight;
+    width: 100%;
+    &--2 {
+      width: 70px;
+      padding: 22px;
+      border-right: $link-underline;
     }
+    &--3 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--4 {
+      width: 70px;
+      padding: 22px;
+      border-left: $link-underline;
+    }
+  }
+  &__logo {
+    width: 200px;
+    height: 35.36px;
   }
 }

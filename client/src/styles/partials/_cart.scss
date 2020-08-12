@@ -1,0 +1,38 @@
+.cart {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  z-index: 99;
+  background-color: lightpink;
+
+  &__container {
+    width: 100%;
+  }
+  &__title {
+  }
+  &__item {
+    &__container {
+      width: 100%;
+      display: flex;
+      &--2 {
+        width: 26%;
+      }
+      &--4 {
+        display: flex;
+      }
+      &--5 {
+        display: flex;
+      }
+    }
+    &__image {
+      height: 100px;
+    }
+    &__delete {
+      @include squareSizing(10px);
+    }
+  }
+}

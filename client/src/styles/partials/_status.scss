@@ -13,3 +13,41 @@
 .transition {
   @include appTransition($app-transition-type, $app-transition-time);
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.9);
+
+  z-index: 20;
+}
+
+.fade {
+  &-appear {
+    opacity: 0;
+    z-index: 1;
+  }
+  &-appear-done {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  &-exit {
+    opacity: 1;
+  }
+  &-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+}
+.translate-left {
+  &-enter {
+    position: absolute;
+    transform: translateX(-110%);
+  }
+  &-enter-active {
+    transform: translateX(-110%);
+    transition: all 500ms ease;
+  }
+}

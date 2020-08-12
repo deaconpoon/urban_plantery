@@ -8,6 +8,7 @@ module.exports = {
       price: 40,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 0,
     },
     {
       _id: "2",
@@ -17,6 +18,7 @@ module.exports = {
       price: 60,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "3",
@@ -26,6 +28,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "4",
@@ -35,6 +38,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 8,
     },
     {
       _id: "5",
@@ -44,6 +48,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "6",
@@ -53,6 +58,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "7",
@@ -62,6 +68,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "8",
@@ -71,6 +78,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "9",
@@ -80,6 +88,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: "10",
@@ -89,6 +98,7 @@ module.exports = {
       price: 20,
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
   ],
 };

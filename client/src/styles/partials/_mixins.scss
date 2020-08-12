@@ -48,6 +48,12 @@
   transition-timing-function: $transition-time;
 }
 
+//sizing
+@mixin squareSizing($unit) {
+  width: $unit;
+  height: $unit;
+}
+
 //screen size
 @mixin tablet() {
   @media screen and (min-width: $tablet-break) {
