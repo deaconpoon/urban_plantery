@@ -17,6 +17,7 @@ const App = () => {
   return (
     <Router>
       <div>
+        {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>}
         <Nav></Nav>
         <Switch>
           <Route path="/products/:id" component={Product}></Route>
@@ -26,7 +27,6 @@ const App = () => {
         </Switch>
         <button onClick={() => setIsOpen(!isOpen)}>click</button>
         <Footer></Footer>
-        {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>}
       </div>
     </Router>
   );
