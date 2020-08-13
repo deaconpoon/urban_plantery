@@ -3,7 +3,7 @@ import logo from "../asset/logo_black.svg";
 import menu from "../asset/menu.svg";
 import cart from "../asset/cart.svg";
 
-const Nav = () => {
+const Nav = ({ isOpen, setIsOpen }) => {
   return (
     <header className="header">
       <div className="nav">
@@ -14,7 +14,10 @@ const Nav = () => {
           <div className="nav__container--3">
             <img alt="logo" className="nav__logo" src={logo}></img>
           </div>
-          <button className="nav__container--4">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="nav__container--4"
+          >
             <img className="nav__cart" src={cart}></img>
           </button>
         </div>

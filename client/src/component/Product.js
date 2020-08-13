@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { detailProducts } from "../actions/ProductActions";
-
+import { addToCart } from "../actions/CartAction";
 const Product = (props) => {
   const [quantity, setQuantity] = useState(1);
   //render clicked product id. props.match is router object
   /* const product = data.products.find((x) => x._id === props.match.params.id); */
   const productDetail = useSelector((state) => state.productDetail);
   const { product, loading, error } = productDetail;
-
+  const productId = props.match.params.id;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(detailProducts(props.match.params.id));
+    dispatch(detailProducts(productId));
 
     return () => {};
   }, []);
@@ -30,8 +30,8 @@ const Product = (props) => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
-  const handleAddToCard = () => {
-    props.history.push("/cart/" + props.match.params.id + "?qty=" + quantity);
+  const handleAddToCart = () => {
+    dispatch(addToCart(productId, quantity));
   };
 
   return (
@@ -71,7 +71,7 @@ const Product = (props) => {
               </div>
             </div>
             {product.countInStock > 0 ? (
-              <div onClick={handleAddToCard} className="product__detail__add">
+              <div onClick={handleAddToCart} className="product__detail__add">
                 Add to Cart
               </div>
             ) : (

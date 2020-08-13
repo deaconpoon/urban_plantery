@@ -18,14 +18,14 @@ const App = () => {
     <Router>
       <div>
         {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>}
-        <Nav></Nav>
+        <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
         <Switch>
           <Route path="/products/:id" component={Product}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/" exact={true} component={Home}></Route>
         </Switch>
-        <button onClick={() => setIsOpen(!isOpen)}>click</button>
+
         <Footer></Footer>
       </div>
     </Router>
