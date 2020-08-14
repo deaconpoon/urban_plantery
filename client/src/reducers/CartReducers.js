@@ -1,4 +1,8 @@
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/CartConstants";
+import {
+  CART_ADD_ITEM,
+  CART_REMOVE_ITEM,
+  CART_DELETE_ITEM,
+} from "../constants/CartConstants";
 
 function cartReducer(state = { cartItems: [] }, action) {
   switch (action.type) {
@@ -21,9 +25,26 @@ function cartReducer(state = { cartItems: [] }, action) {
       //add the separate item int ht
       return { cartItems: [...state.cartItems, item] };
     case CART_REMOVE_ITEM:
+      const deleteItem = action.payload;
+      //check if cart items is the same as added product
+      const deleteProduct = state.cartItems.find(
+        (x) => x.product === deleteItem.product
+      );
+      if (deleteProduct) {
+        return {
+          cartItems:
+            //Use updated quantity
+            state.cartItems.map((x) => {
+              //or use current quantity
+              return { ...x, quantity: x.quantity - deleteItem.quantity };
+            }),
+        };
+      }
+    case CART_DELETE_ITEM:
       return {
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
       };
+
     default:
       return state;
   }
