@@ -7,7 +7,10 @@ import {
 } from "../reducers/ProductListReducers";
 import { cartReducer } from "../reducers/CartReducers";
 
-const cartItems = cookie.getJSON("cartItems") || [];
+const cartItems =
+  cookie.getJSON("cartItems") === "undefined"
+    ? []
+    : cookie.getJSON("cartItems");
 
 const initialState = {
   cart: { cartItems },

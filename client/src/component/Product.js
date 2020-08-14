@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { detailProducts } from "../actions/ProductActions";
 import { addToCart } from "../actions/CartAction";
+import { QuantityBtn } from "../component/QuantityBtn";
+
 const Product = (props) => {
-  const [quantity, setQuantity] = useState(1);
+  const [productQty, setProductQty] = useState(1);
   //render clicked product id. props.match is router object
   /* const product = data.products.find((x) => x._id === props.match.params.id); */
   const productDetail = useSelector((state) => state.productDetail);
@@ -17,21 +19,8 @@ const Product = (props) => {
     return () => {};
   }, []);
 
-  const decrementQuantity = () => {
-    if (quantity === 1) {
-      return;
-    }
-    setQuantity((prevQuantity) => prevQuantity - 1);
-  };
-  const incrementQuantity = () => {
-    if (quantity === product.countInStock) {
-      return;
-    }
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
   const handleAddToCart = () => {
-    dispatch(addToCart(productId, quantity));
+    dispatch(addToCart(productId, productQty));
   };
 
   return (
@@ -54,21 +43,12 @@ const Product = (props) => {
             <div className="product__detail__price">$ {product.price}</div>
             <div className="product__detail__container--3">
               <div className="product__detail__quantity">Quantity</div>
-              <div className="quantity-btn">
-                <img
-                  alt="arithmetic"
-                  className="quantity-btn--arithmetic "
-                  onClick={() => decrementQuantity()}
-                  src={require("../asset/minus.svg")}
-                ></img>
-                <div className="quantity-btn--amount">{quantity}</div>
-                <img
-                  alt="arithmetic"
-                  className="quantity-btn--arithmetic"
-                  onClick={() => incrementQuantity()}
-                  src={require("../asset/plus.svg")}
-                ></img>
-              </div>
+
+              <QuantityBtn
+                productQty={productQty}
+                setProductQty={setProductQty}
+                product={product}
+              ></QuantityBtn>
             </div>
             {product.countInStock > 0 ? (
               <div onClick={handleAddToCart} className="product__detail__add">

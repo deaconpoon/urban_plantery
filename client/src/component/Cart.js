@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/CartAction";
+import CartItem from "../component/CartItem";
 
 import cross from "../asset/cross.svg";
 
@@ -53,43 +54,7 @@ const Cart = ({ isOpen, setIsOpen }) => {
                   {cartItems.length === 0 ? (
                     <div>Cart is empty </div>
                   ) : (
-                    cartItems.map((item) => (
-                      <div className="cart__item__container">
-                        <div className="cart__item__container--2">
-                          <img
-                            src="../asset/product/plant_1.jpg"
-                            className="cart__item__image"
-                          ></img>
-                        </div>
-                        <div className="cart__item__container--3">
-                          <div className="cart__item__container--4">
-                            <div className="cart__item__name">{item.name}</div>
-                            <img
-                              src={require("../asset/cross.svg")}
-                              className="cart__item__delete"
-                            ></img>
-                          </div>
-                          <div className="cart__item__container--5">
-                            <div className="cart__item__quantity-btn">
-                              <img
-                                alt="arithmetic"
-                                className="cart__item__quantity-btn--arithmetic "
-                                src={require("../asset/minus.svg")}
-                              ></img>
-                              <div className="cart__item__quantity-btn--amount">
-                                {item.quantity}
-                              </div>
-                              <img
-                                alt="arithmetic"
-                                className="cart__item__quantity-btn--arithmetic"
-                                src={require("../asset/plus.svg")}
-                              ></img>
-                            </div>
-                            <div>$100</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))
+                    cartItems.map((item) => <CartItem item={item}></CartItem>)
                   )}
                 </div>
               </div>

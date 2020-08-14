@@ -12,11 +12,13 @@ function cartReducer(state = { cartItems: [] }, action) {
             //Use updated quantity
             state.cartItems.map((x) =>
               //or use current quantity
-              x.product === product.product ? (x.quantity += item.quantity) : x
+              x.product === product.product
+                ? { ...x, quantity: x.quantity + item.quantity }
+                : x
             ),
         };
       }
-      //add the separate item into the cart
+      //add the separate item int ht
       return { cartItems: [...state.cartItems, item] };
     case CART_REMOVE_ITEM:
       return {
