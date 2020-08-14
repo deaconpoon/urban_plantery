@@ -11,19 +11,6 @@ const Cart = ({ isOpen, setIsOpen }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  /*   const decrementQuantity = () => {
-    if (quantity === 1) {
-      return;
-    }
-    setQuantity((prevQuantity) => prevQuantity - 1);
-  };
-  const incrementQuantity = () => {
-    if (quantity === product.countInStock) {
-      return;
-    }
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  }; */
-
   return (
     <div>
       <CSSTransition classNames="fade" in={isOpen} appear={isOpen}>
@@ -69,7 +56,9 @@ const Cart = ({ isOpen, setIsOpen }) => {
                 </div>
                 <div className="cart__body__total">
                   <div className="cart__body__total--text">Total</div>
-                  <div className="cart__body__total--amount">$100</div>
+                  <div className="cart__body__total--amount">
+                    $ {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                  </div>
                 </div>
                 <div className="cart__body__checkout">
                   <button className="cart__body__checkout--btn">

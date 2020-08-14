@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
         </div>
         <div className="cart__item__container--5">
           <CartQtyBtn item={item}></CartQtyBtn>
-          <div>{item.price}</div>
+          <div>$ {item.price}</div>
         </div>
       </div>
     </div>

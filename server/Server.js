@@ -1,5 +1,17 @@
 const express = require("express");
 const data = require("./Data");
+const dotenv = require("dotenv");
+const config = require("./config");
+const mongoose = require("mongoose");
+
+dotenv.config();
+
+const mongodbUrl = config.MONGODB_URL;
+mongoose
+  .connect(mongodbUrl, {
+    useNewUrlParser: true,
+  })
+  .catch((error) => console.log(error.reason));
 
 const app = express();
 
