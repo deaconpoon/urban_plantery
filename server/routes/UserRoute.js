@@ -1,8 +1,9 @@
-const express = require("express");
+import express from "express";
+import User from "../models/userModel";
 
-const route = express.Router();
+const router = express.Router();
 
-route.get("/api/users/createadmin", async (req, res) => {
+router.get("/createadmin", async (req, res) => {
   try {
     const user = new User({
       name: "Deacon",
@@ -12,10 +13,9 @@ route.get("/api/users/createadmin", async (req, res) => {
     });
 
     const newUser = await user.save();
-    res.send(user);
+    res.send(newUser);
   } catch (error) {
     res.send({ msg: error.message });
   }
 });
-
-export default userRoute;
+export default router;
