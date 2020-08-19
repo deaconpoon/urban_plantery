@@ -9,7 +9,9 @@ import Home from "./Home";
 import Shop from "./Shop";
 import Product from "./Product";
 import Cart from "./Cart";
-import { useSelector } from "react-redux";
+
+import SignInUser from "./SignInUser";
+import RegisterUser from "./RegisterUser";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +21,10 @@ const App = () => {
       <div>
         {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>}
         <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
+
         <Switch>
+          <Route path="/register" component={RegisterUser}></Route>
+          <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
           <Route path="/cart" component={Cart}></Route>

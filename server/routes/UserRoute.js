@@ -1,7 +1,28 @@
 import express from "express";
 import User from "../models/userModel";
+import { getToken, isAuth } from "../Util";
 
 const router = express.Router();
+
+router.put("/:id", isAuth, async (req, res) => {
+  const userId = req.params.id;
+  const user = await User.findById(userId);
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.password = req.body.password || user.password;
+    const updateUser = await user.save();
+    res.send({
+      _id: updateUser.id,
+      name: updateUser.name,
+      email: updateUser.email,
+      isAdmin: updateUser.isAdmin,
+      token: getToken(updateUser),
+    });
+  } else {
+    res.status(404).send({ message: "User Not Found" });
+  }
+});
 
 router.post("/signin", async (req, res) => {
   const signinUser = await User.findOne({

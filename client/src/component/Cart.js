@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { CSSTransition } from "react-transition-group";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../actions/CartAction";
+
 import CartItem from "../component/CartItem";
 
 import cross from "../asset/cross.svg";
