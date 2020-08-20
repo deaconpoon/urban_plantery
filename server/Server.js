@@ -5,6 +5,7 @@ import config from "./config";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import userRoute from "./routes/UserRoute";
+import productRoute from "./routes/ProductRoute";
 
 dotenv.config();
 
@@ -22,9 +23,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 
-app.get("/api/products", (req, res) => {
-  res.send(data.products);
-});
+app.use("/api/products", productRoute);
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
   //Return user clicked product

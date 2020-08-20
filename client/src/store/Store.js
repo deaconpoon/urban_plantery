@@ -4,6 +4,8 @@ import cookie from "js-cookie";
 import {
   productListReducer,
   productDetailReducer,
+  productSaveReducer,
+  productDeleteReducer,
 } from "../reducers/ProductListReducers";
 import { cartReducer } from "../reducers/CartReducers";
 import {
@@ -12,7 +14,7 @@ import {
 } from "../reducers/UserReducers";
 
 const cartItems = cookie.getJSON("cartItems") || [];
-const userInfo = cookie.getJSON("userInfo") || [];
+const userInfo = cookie.getJSON("userInfo") || null;
 
 const initialState = {
   cart: { cartItems },
@@ -22,6 +24,8 @@ const initialState = {
 const reducer = combineReducers({
   productList: productListReducer,
   productDetail: productDetailReducer,
+  productSave: productSaveReducer,
+  productDelete: productDeleteReducer,
   cart: cartReducer,
   userSignIn: userSignInReducer,
   userRegister: userRegisterReducer,

@@ -6,7 +6,9 @@
   height: 70px;
 
   border-bottom: $link-underline;
-
+  &__block {
+    height: 70px;
+  }
   &__container {
     display: flex;
     width: 100%;

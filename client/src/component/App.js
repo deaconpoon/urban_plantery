@@ -12,6 +12,7 @@ import Cart from "./Cart";
 
 import SignInUser from "./SignInUser";
 import RegisterUser from "./RegisterUser";
+import ProductsAdmin from "./ProductsAdmin";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
+          <Route path="/productsadmin" component={ProductsAdmin}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/" exact={true} component={Home}></Route>
         </Switch>
