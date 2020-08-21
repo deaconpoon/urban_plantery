@@ -35,6 +35,9 @@ const ProductsAdmin = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (successSave) {
+      setModalVisible(false);
+    }
     dispatch(listProducts());
     return () => {
       //
