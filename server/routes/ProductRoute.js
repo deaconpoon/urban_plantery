@@ -26,14 +26,15 @@ const router = express.Router();
     res.send(products);
 }); */
 
-/* router.get("/:id", async (req, res) => {
+//Get individal product
+router.get("/:id", async (req, res) => {
   const product = await Product.findOne({ _id: req.params.id });
   if (product) {
     res.send(product);
   } else {
     res.status(404).send({ message: "Product Not Found." });
   }
-}); */
+});
 
 //Update product list
 
@@ -89,7 +90,6 @@ router.post("/", async (req, res) => {
   return res.status(500).send({ message: "Error in Creating Product." });
 });
 
-/* 
 router.delete("/:id", isAuth, isAdmin, async (req, res) => {
   const deletedProduct = await Product.findById(req.params.id);
   if (deletedProduct) {
@@ -98,6 +98,6 @@ router.delete("/:id", isAuth, isAdmin, async (req, res) => {
   } else {
     res.send("Error in Deletion.");
   }
-}); */
+});
 
 export default router;

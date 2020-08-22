@@ -13,6 +13,9 @@ import Cart from "./Cart";
 import SignInUser from "./SignInUser";
 import RegisterUser from "./RegisterUser";
 import ProductsAdmin from "./ProductsAdmin";
+import Shipping from "./Shipping";
+import Payment from "./Payment";
+import PlaceOrder from "./PlaceOrder";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +30,9 @@ const App = () => {
           <Route path="/register" component={RegisterUser}></Route>
           <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>
+          <Route path="/shipping" component={Shipping}></Route>
+          <Route path="/payment" component={Payment}></Route>
+          <Route path="/placeorder" component={PlaceOrder}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
           <Route path="/productsadmin" component={ProductsAdmin}></Route>
           <Route path="/cart" component={Cart}></Route>
