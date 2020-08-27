@@ -7,6 +7,9 @@ import {
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
   USER_REGISTER_FAIL,
+  USER_UPDATE_REQUEST,
+  USER_UPDATE_SUCCESS,
+  USER_UPDATE_FAIL,
   USER_LOGOUT,
 } from "../constants/UsersConstants";
 
@@ -48,7 +51,7 @@ const update = ({ userId, name, email, password }) => async (
     payload: { userId, name, email, password },
   });
   try {
-    const { data } = await Axios.put(
+    const { data } = await axios.put(
       "/api/users/" + userId,
       { name, email, password },
       {
@@ -58,7 +61,7 @@ const update = ({ userId, name, email, password }) => async (
       }
     );
     dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
-    Cookie.set("userInfo", JSON.stringify(data));
+    cookie.set("userInfo", JSON.stringify(data));
   } catch (error) {
     dispatch({ type: USER_UPDATE_FAIL, payload: error.message });
   }

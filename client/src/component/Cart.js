@@ -2,17 +2,23 @@ import React, { useState, useEffect } from "react";
 
 import { CSSTransition } from "react-transition-group";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 import CartItem from "../component/CartItem";
-
+import { logout } from "../actions/UserActions";
 import cross from "../asset/cross.svg";
 
 const Cart = ({ isOpen, setIsOpen, props }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
+  const userSignIn = useSelector((state) => state.userSignIn);
+  const { userInfo } = userSignIn;
+  const dispatch = useDispatch();
   const handleCheckOut = () => {
     props.history.push("/signin?redirect=shipping");
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -39,6 +45,11 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
               </div>
             </header>
             <div className="cart__body">
+              {userInfo ? (
+                <div onClick={handleLogout}>Sign out</div>
+              ) : (
+                <Link to="/signin">Sign in</Link>
+              )}
               <div className="cart__body__container">
                 <div className="cart__title">Urban Plantery</div>
                 <div className="cart__container--2">
