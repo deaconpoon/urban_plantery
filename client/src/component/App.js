@@ -34,9 +34,9 @@ const App = () => {
           <Route path="/shipping" component={Shipping}></Route>
           <Route path="/payment" component={Payment}></Route>
           <Route path="/placeorder" component={PlaceOrder}></Route>
-          <Route path="/order:id" component={Order}></Route>
+          <Route path="/order/:id" component={Order}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
-          <Route path="/productsadmin" component={ProductsAdmin}></Route>
+          <Route path="/products/admin" component={ProductsAdmin}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/" exact={true} component={Home}></Route>
         </Switch>

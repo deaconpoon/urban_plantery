@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import userRoute from "./routes/UserRoute";
 import productRoute from "./routes/ProductRoute";
+import orderRoute from "./routes/OrderRoute";
 
 dotenv.config();
 

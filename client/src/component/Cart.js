@@ -7,9 +7,13 @@ import CartItem from "../component/CartItem";
 
 import cross from "../asset/cross.svg";
 
-const Cart = ({ isOpen, setIsOpen }) => {
+const Cart = ({ isOpen, setIsOpen, props }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
+  const handleCheckOut = () => {
+    props.history.push("/signin?redirect=shipping");
+  };
 
   return (
     <div>
@@ -61,7 +65,10 @@ const Cart = ({ isOpen, setIsOpen }) => {
                   </div>
                 </div>
                 <div className="cart__body__checkout">
-                  <button className="cart__body__checkout--btn">
+                  <button
+                    onClick={handleCheckOut}
+                    className="cart__body__checkout--btn"
+                  >
                     CHECK OUT
                   </button>
                 </div>
