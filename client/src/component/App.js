@@ -16,6 +16,7 @@ import ProductsAdmin from "./ProductsAdmin";
 import Shipping from "./Shipping";
 import Payment from "./Payment";
 import PlaceOrder from "./PlaceOrder";
+import Order from "./Order";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/shipping" component={Shipping}></Route>
           <Route path="/payment" component={Payment}></Route>
           <Route path="/placeorder" component={PlaceOrder}></Route>
+          <Route path="/order:id" component={Order}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
           <Route path="/productsadmin" component={ProductsAdmin}></Route>
           <Route path="/cart" component={Cart}></Route>

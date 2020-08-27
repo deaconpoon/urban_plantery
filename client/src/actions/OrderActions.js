@@ -24,7 +24,7 @@ const createOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({ type: ORDER_CREATE_REQUEST, payload: order });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const {
       data: { data: newOrder },
@@ -43,7 +43,7 @@ const listMyOrders = () => async (dispatch, getState) => {
   try {
     dispatch({ type: MY_ORDER_LIST_REQUEST });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.get("/api/orders/mine", {
       headers: { Authorization: "Bearer " + userInfo.token },
@@ -58,7 +58,7 @@ const listOrders = () => async (dispatch, getState) => {
   try {
     dispatch({ type: ORDER_LIST_REQUEST });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.get("/api/orders", {
       headers: { Authorization: "Bearer " + userInfo.token },
@@ -73,7 +73,7 @@ const detailsOrder = (orderId) => async (dispatch, getState) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.get("/api/orders/" + orderId, {
       headers: { Authorization: "Bearer " + userInfo.token },
@@ -88,7 +88,7 @@ const payOrder = (order, paymentResult) => async (dispatch, getState) => {
   try {
     dispatch({ type: ORDER_PAY_REQUEST, payload: paymentResult });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.put(
       "/api/orders/" + order._id + "/pay",
@@ -107,7 +107,7 @@ const deleteOrder = (orderId) => async (dispatch, getState) => {
   try {
     dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.delete("/api/orders/" + orderId, {
       headers: { Authorization: "Bearer " + userInfo.token },
