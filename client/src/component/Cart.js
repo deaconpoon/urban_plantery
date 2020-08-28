@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { CSSTransition } from "react-transition-group";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import CartItem from "../component/CartItem";
 import { logout } from "../actions/UserActions";
 import cross from "../asset/cross.svg";
@@ -13,6 +13,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
   const userSignIn = useSelector((state) => state.userSignIn);
   const { userInfo } = userSignIn;
   const dispatch = useDispatch();
+
   const handleCheckOut = () => {
     props.history.push("/signin?redirect=shipping");
   };
@@ -76,12 +77,13 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                   </div>
                 </div>
                 <div className="cart__body__checkout">
-                  <button
-                    onClick={handleCheckOut}
+                  <Link
+                    to="/signin?redirect=shipping"
                     className="cart__body__checkout--btn"
+                    onClick={() => setIsOpen(false)}
                   >
                     CHECK OUT
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -92,4 +94,4 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
   );
 };
 
-export default Cart;
+export default withRouter(Cart);

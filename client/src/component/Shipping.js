@@ -17,6 +17,7 @@ function Shipping(props) {
     dispatch(saveShipping({ address, city, postalCode, country }));
     props.history.push("payment");
   };
+
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>
