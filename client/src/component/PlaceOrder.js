@@ -5,7 +5,7 @@ import CheckoutSteps from "../component/CheckoutSteps";
 import { createOrder } from "../actions/OrderActions";
 import PaypalButton from "../component/PaypalButton";
 
-function PlaceOrderScreen(props) {
+function PlaceOrder(props) {
   const cart = useSelector((state) => state.cart);
   const orderCreate = useSelector((state) => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
@@ -77,7 +77,7 @@ function PlaceOrderScreen(props) {
                       <div>
                         <Link to={"/product/" + item.product}>{item.name}</Link>
                       </div>
-                      <div>Qty: {item.qty}</div>
+                      <div>Qty: {item.quantity}</div>
                     </div>
                     <div className="cart-price">${item.price}</div>
                   </li>
@@ -122,4 +122,4 @@ function PlaceOrderScreen(props) {
   );
 }
 
-export default PlaceOrderScreen;
+export default PlaceOrder;
