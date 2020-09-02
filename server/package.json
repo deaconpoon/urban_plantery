@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm:server\" \"npm:client\"",
     "client": "npm start --prefix ../client",
-    "server": "nodemon --exec babel-node Server.js"
+    "server": "nodemon --exec babel-node Server.js",
+    "build": "rm -rf dist && babel backend -d dist",
+    "heroku-postbuild": "npm run build && cd ../client && npm install && npm run build"
+  },
+  "homepage": "https://https://github.com/deaconpoon/urban_plantery",
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
   },
   "author": "",
   "license": "ISC",
