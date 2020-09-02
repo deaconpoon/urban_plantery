@@ -4,6 +4,7 @@ import { getToken, isAuth } from "../Util";
 
 const router = express.Router();
 
+//Update user profile
 router.put("/:id", isAuth, async (req, res) => {
   const userId = req.params.id;
   const user = await User.findById(userId);
@@ -24,6 +25,7 @@ router.put("/:id", isAuth, async (req, res) => {
   }
 });
 
+//Sign in user
 router.post("/signin", async (req, res) => {
   const signinUser = await User.findOne({
     email: req.body.email,
@@ -42,6 +44,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 
+//Register user
 router.post("/register", async (req, res) => {
   const user = new User({
     name: req.body.name,
@@ -63,6 +66,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
+//Create Admin
 router.get("/createadmin", async (req, res) => {
   try {
     const user = new User({

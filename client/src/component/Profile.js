@@ -25,6 +25,8 @@ function Profile(props) {
 
   const myOrderList = useSelector((state) => state.myOrderList);
   const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
+
+  //Set default signed in user info
   useEffect(() => {
     if (userInfo) {
       console.log(userInfo.name);
