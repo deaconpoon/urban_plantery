@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { logout, update } from "../actions/userActions";
-import { listMyOrders } from "../actions/orderActions";
+import { logout, update } from "../actions/UserActions";
+import { listMyOrders } from "../actions/OrderActions";
 import { useDispatch, useSelector } from "react-redux";
 
 function Profile(props) {

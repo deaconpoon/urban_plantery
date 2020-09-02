@@ -44,7 +44,7 @@ const update = ({ userId, name, email, password }) => async (
   getState
 ) => {
   const {
-    userSignin: { userInfo },
+    userSignIn: { userInfo },
   } = getState();
   dispatch({
     type: USER_UPDATE_REQUEST,
