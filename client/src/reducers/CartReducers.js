@@ -32,14 +32,16 @@ function cartReducer(state = { cartItems: [] }, action) {
       const deleteProduct = state.cartItems.find(
         (x) => x.product === deleteItem.product
       );
-      if (deleteProduct) {
+      if (deleteProduct.quantity >= 1) {
         return {
           cartItems:
             //Use updated quantity
-            state.cartItems.map((x) => {
+            state.cartItems.map((x) =>
               //or use current quantity
-              return { ...x, quantity: x.quantity - deleteItem.quantity };
-            }),
+              x.product === deleteProduct.product
+                ? { ...x, quantity: x.quantity - deleteItem.quantity }
+                : x
+            ),
         };
       }
     case CART_DELETE_ITEM:

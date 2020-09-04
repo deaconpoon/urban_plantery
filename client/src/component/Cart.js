@@ -46,12 +46,14 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
               </div>
             </header>
             <div className="cart__body">
-              {userInfo ? (
-                <div onClick={handleLogout}>Sign out</div>
-              ) : (
-                <Link to="/signin">Sign in</Link>
-              )}
               <div className="cart__body__container">
+                {userInfo ? (
+                  <div className="cart__signin" onClick={handleLogout}>
+                    Logout
+                  </div>
+                ) : (
+                  <Link to="/signin">Sign in</Link>
+                )}
                 <div className="cart__title">Urban Plantery</div>
                 <div className="cart__container--2">
                   {cartItems.length === 0 ? (

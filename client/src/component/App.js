@@ -37,11 +37,11 @@ const App = () => {
           <Route path="/payment" component={Payment}></Route>
           <Route path="/placeorder" component={PlaceOrder}></Route>
           <Route path="/order/:id" component={Order}></Route>
+          <Route path="/profile" component={Profile}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
           <Route path="/productsadmin" component={ProductsAdmin}></Route>
           <Route path="/orderadmin" component={OrdersAdmin}></Route>
 
-          <Route path="/profile" component={Profile}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/" exact={true} component={Home}></Route>
         </Switch>
