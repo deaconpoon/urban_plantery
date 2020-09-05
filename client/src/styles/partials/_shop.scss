@@ -9,6 +9,10 @@
     &__container {
       width: 70%;
       &--2 {
+        display: flex;
+        align-items: flex-end;
+      }
+      &--3 {
         height: 36px;
         @include tablet() {
           display: flex;
@@ -66,6 +70,7 @@
       }
       &__item {
         margin-bottom: 1em;
+        text-transform: capitalize;
       }
     }
   }
@@ -76,6 +81,9 @@
       grid: auto / repeat(2, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 40px;
+    }
+    @include desktop() {
+      grid: auto / repeat(3, 1fr);
     }
   }
   &__body {

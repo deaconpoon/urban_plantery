@@ -9,7 +9,10 @@
 
     margin-bottom: 1em;
     @include tablet() {
-      max-height: 185px;
+      max-height: 220px;
+    }
+    @include desktop() {
+      max-height: 260px;
     }
   }
   &__name {

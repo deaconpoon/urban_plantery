@@ -46,12 +46,10 @@ li {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
+
 a {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
 
 /* Make images easier to work with */
@@ -74,6 +72,10 @@ select {
 }
 select {
   border: 1px solid black;
+  background-color: white;
+}
+select:focus {
+  outline: none;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
