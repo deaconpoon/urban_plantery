@@ -39,6 +39,7 @@ const App = () => {
           <Route path="/order/:id" component={Order}></Route>
           <Route path="/profile" component={Profile}></Route>
           <Route path="/products" exact={true} component={Shop}></Route>
+          <Route path="/category/:id" component={Shop}></Route>
           <Route path="/productsadmin" component={ProductsAdmin}></Route>
           <Route path="/orderadmin" component={OrdersAdmin}></Route>
 

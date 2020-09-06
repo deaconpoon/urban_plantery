@@ -7,6 +7,7 @@ const router = express.Router();
 //Searching
 router.get("/", async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
+
   const searchKeyword = req.query.searchKeyword
     ? {
         name: {

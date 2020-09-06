@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import ProductCard from "./ProductCard";
+
 import { listProducts } from "../actions/ProductActions";
+import ProductCard from "./ProductCard";
+import SideMenu from "./SideMenu";
 
 const Shop = (props) => {
   const [filtered, setFiltered] = useState(false);
+  const [categorySet, setCategorySet] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const category = props.match.params.id ? props.match.params.id : "";
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
-  const [categorySet, setCategorySet] = useState(new Set());
 
   useEffect(() => {
     dispatch(listProducts(category));
@@ -41,19 +42,6 @@ const Shop = (props) => {
   const sortHandler = (e) => {
     setSortOrder(e.target.value);
     dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
-
-  const handleCategory = () => {
-    let categorySet = new Set();
-
-    products.map((product) => categorySet.add(product.category));
-
-    let categoryArr = Array.from(categorySet);
-    return categoryArr.sort().map((category) => (
-      <li key="genus" className="shop__aside__list__item">
-        <Link to={"products/category/" + category}>{category}</Link>
-      </li>
-    ));
   };
 
   return loading ? (
@@ -102,10 +90,7 @@ const Shop = (props) => {
             </div>
 
             <ul className="shop__aside__list">
-              <li key="genus" className="shop__aside__list__item">
-                All
-              </li>
-              {handleCategory()}
+              <SideMenu></SideMenu>
             </ul>
           </aside>
           <section className="shop__section">
