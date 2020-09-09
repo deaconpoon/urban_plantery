@@ -1,0 +1,30 @@
+.footer {
+  &__container {
+    @include tablet() {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__logo {
+    margin-bottom: 5em;
+    &--image {
+      width: 200px;
+
+      @include tablet() {
+        width: 160px;
+      }
+    }
+  }
+  &__link {
+    height: 40px;
+
+    @include tablet() {
+      width: 200px;
+    }
+  }
+  &__links {
+    display: grid;
+    grid: auto / repeat(2, 1fr);
+    margin-bottom: 5em;
+  }
+}

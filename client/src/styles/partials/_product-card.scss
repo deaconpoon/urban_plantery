@@ -1,0 +1,94 @@
+.product__card {
+  margin-bottom: 2em;
+
+  &__image {
+    width: 100%;
+    max-height: 414px;
+
+    object-fit: cover;
+
+    margin-bottom: 1em;
+    @include tablet() {
+      max-height: 220px;
+    }
+    @include desktop() {
+      max-height: 260px;
+    }
+  }
+  &__name {
+    color: $black;
+    margin-bottom: 0.5em;
+  }
+  &__price {
+    color: $grey;
+  }
+}
+
+.product {
+  margin-bottom: $section-bottom;
+  @include tablet() {
+    display: flex;
+    .product__card:first-child {
+      margin: 0;
+    }
+  }
+  @include tablet() {
+    margin-bottom: 0;
+  }
+  &__detail {
+    margin-bottom: $section-bottom;
+
+    @include tablet() {
+      display: flex;
+      flex-flow: row;
+    }
+    &__container {
+      margin-bottom: $sub-title-bottom;
+
+      @include tablet() {
+        display: flex;
+        flex-flow: row;
+        width: 46%;
+      }
+      &--2 {
+        width: 70%;
+
+        @include tablet() {
+          width: 46%;
+          padding-left: $product-detail-left;
+          margin-top: $product-detail-top;
+          margin-right: $product-detail-right;
+        }
+      }
+      &--3 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2.5rem;
+      }
+    }
+    &__image {
+    }
+    &__name {
+      @include setFontAttr($font-xlarge, $font-mid-weight, $font-title-height);
+      font-family: $font-secondary;
+      margin-bottom: $text-bottom;
+    }
+    &__price {
+      color: $grey;
+      font-size: $font-price;
+      margin-bottom: 1.125rem;
+    }
+    &__quantity {
+      font-size: $font-quantity;
+      margin-right: 1em;
+    }
+
+    &__add {
+      width: 100%;
+      padding: 0.8em 1em;
+      text-align: center;
+      background-color: $black;
+      color: $white;
+    }
+  }
+}

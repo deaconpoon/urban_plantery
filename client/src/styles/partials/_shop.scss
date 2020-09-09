@@ -1,0 +1,98 @@
+.shop {
+  margin-top: 94.39px;
+  &__header {
+    margin-bottom: 2em;
+    @include tablet() {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__container {
+      width: 70%;
+      &--2 {
+        display: flex;
+        align-items: flex-end;
+      }
+      &--3 {
+        height: 36px;
+        @include tablet() {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    &__title {
+      @include subTitleText($font-secondary);
+      margin-bottom: 1em;
+    }
+    &__text {
+      margin-bottom: 2em;
+      @include tablet() {
+        margin-bottom: 0;
+      }
+    }
+    &__sort {
+      margin-right: 1em;
+      @include tablet() {
+        margin-bottom: 0;
+      }
+    }
+    &__select {
+      padding: 0.5em 1em;
+    }
+  }
+  &__aside {
+    margin-bottom: $sub-title-bottom;
+    @include tablet() {
+      width: 20%;
+
+      margin-right: 2em;
+    }
+    &__container {
+      margin-bottom: 1em;
+      @include tablet() {
+        display: none;
+      }
+    }
+    &__filter {
+      display: inline-block;
+      margin-right: 0.6em;
+    }
+    &__filter--arrow {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      padding-top: 0.2em;
+    }
+
+    &__list {
+      @include tablet() {
+        display: contents;
+      }
+      &__item {
+        margin-bottom: 1em;
+        text-transform: capitalize;
+      }
+    }
+  }
+  &__section {
+    width: 100%;
+    @include tablet() {
+      display: grid;
+      grid: auto / repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 40px;
+    }
+    @include desktop() {
+      grid: auto / repeat(3, 1fr);
+    }
+  }
+  &__body {
+    &__container {
+      margin-bottom: $section-bottom;
+      @include tablet() {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

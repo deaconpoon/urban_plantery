@@ -1,0 +1,4 @@
+.sub-title {
+  @include subTitleText($font-secondary);
+  margin-bottom: $sub-title-bottom;
+}
