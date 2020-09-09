@@ -1,9 +1,0 @@
-.form {
-  margin-top: 6em;
-
-  &__submit {
-    &__btn {
-      @extend .quantity-btn;
-    }
-  }
-}
