@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const About = () => {
+  const history = useHistory();
   return (
     <div className="about section">
       <div className="about__body">
@@ -21,7 +23,12 @@ const About = () => {
               magical garden inhabit a plethora of exotic plants. Discover the
               wonder of botany and spice your life up with some 🌻💖{" "}
             </div>
-            <div className="about__body__main__link">Shop our collection</div>
+            <div
+              onClick={() => history.push("/products")}
+              className="about__body__main__link"
+            >
+              Shop our collection
+            </div>
           </div>
           <div className="about__body__main__container--2">
             <img

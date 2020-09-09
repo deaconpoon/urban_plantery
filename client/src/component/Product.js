@@ -20,7 +20,6 @@ const Product = (props) => {
   }, []);
 
   const handleAddToCart = () => {
-    console.log("fire");
     dispatch(addToCart(productId, productQty));
   };
 
