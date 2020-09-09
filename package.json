@@ -8,7 +8,7 @@
     "start": "concurrently \"npm:server\" \"npm:client\"",
     "client": "npm start --prefix ../client",
     "server": "nodemon --exec babel-node Server.js",
-    "build": "cd server && rm -rf dist && babel -d dist",
+    "build": "cd server && rm -rf dist && babel server -d dist",
     "heroku-postbuild": "npm run build && cd client && npm install && npm run build"
   },
   "homepage": "https://https://github.com/deaconpoon/urban_plantery",
