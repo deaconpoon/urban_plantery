@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import userRoute from "./routes/UserRoute";
 import productRoute from "./routes/ProductRoute";
 import orderRoute from "./routes/OrderRoute";
-import { path } from "path";
+import path from "path";
 
 dotenv.config();
 
