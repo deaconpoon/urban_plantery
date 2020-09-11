@@ -66,7 +66,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-//Create Admin
 router.get("/createadmin", async (req, res) => {
   try {
     const user = new User({
