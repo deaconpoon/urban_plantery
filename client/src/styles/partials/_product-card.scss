@@ -66,8 +66,7 @@
         margin-bottom: 2.5rem;
       }
     }
-    &__image {
-    }
+
     &__name {
       @include setFontAttr($font-xlarge, $font-mid-weight, $font-title-height);
       font-family: $font-secondary;
@@ -91,4 +90,25 @@
       color: $white;
     }
   }
+}
+.products {
+  .product:last-child {
+    display: none;
+  }
+  @include tablet() {
+    display: grid;
+    grid: auto / 1fr 1fr;
+    gap: 2em;
+  }
+
+  @include desktop() {
+    grid: auto / 1fr 1fr 1fr;
+
+    .product:last-child {
+      display: contents;
+    }
+  }
+}
+.new-product {
+  margin-bottom: $section-bottom;
 }

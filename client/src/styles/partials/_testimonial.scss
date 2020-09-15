@@ -24,13 +24,16 @@
     }
     @include absoluteCenter();
     &__body {
-      @include setFontAttr($font-mid, $font-mid-weight, $font-body-height);
+      @include setFontAttr(1.5rem, $font-mid-weight, $font-body-height);
       font-family: $font-secondary;
 
       text-align: center;
 
       @include tablet() {
-        @include setFontAttr(1.5em, $font-light-weight, 0);
+        @include setFontAttr($font-large, $font-light-weight, 0);
+      }
+      @include desktop() {
+        @include setFontAttr(2.5rem, $font-light-weight, 0);
       }
     }
   }

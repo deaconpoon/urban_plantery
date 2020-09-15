@@ -20,7 +20,7 @@ const NewProduct = () => {
     <div className="new-product">
       <div className="section">
         <h2 className="sub-title">New products</h2>
-        <div className="product">
+        <ul className="products">
           {/* <div className="product__card">
             <img
               className="product__card__image"
@@ -39,10 +39,10 @@ const NewProduct = () => {
             <div className="product__card__name">plant</div>
             <div className="product__card__price">$100</div>
           </div> */}
-          {products.slice(0, 2).map((product) => (
+          {products.slice(0, 3).map((product) => (
             <ProductCard product={product}></ProductCard>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
