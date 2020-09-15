@@ -23,12 +23,12 @@ const About = () => {
               magical garden inhabit a plethora of exotic plants. Discover the
               wonder of botany and spice your life up with some 🌻💖{" "}
             </div>
-            <div
+            <a
               onClick={() => history.push("/products")}
               className="about__body__main__link"
             >
               Shop our collection
-            </div>
+            </a>
           </div>
           <div className="about__body__main__container--2">
             <img

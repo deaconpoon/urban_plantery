@@ -35,5 +35,7 @@
   &__logo {
     width: 200px;
     height: 35.36px;
+
+    @include pointerOnHover();
   }
 }

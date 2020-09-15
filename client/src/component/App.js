@@ -30,6 +30,7 @@ const App = () => {
         <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
 
         <Switch>
+          <Route path="/" exact={true} component={Home}></Route>
           <Route path="/register" component={RegisterUser}></Route>
           <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>
@@ -44,7 +45,6 @@ const App = () => {
           <Route path="/orderadmin" component={OrdersAdmin}></Route>
 
           <Route path="/cart" component={Cart}></Route>
-          <Route path="/" exact={true} component={Home}></Route>
         </Switch>
 
         <Footer></Footer>

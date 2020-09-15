@@ -71,3 +71,9 @@
     @content;
   }
 }
+
+@mixin pointerOnHover() {
+  &:hover {
+    cursor: pointer;
+  }
+}

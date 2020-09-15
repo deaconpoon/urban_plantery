@@ -24,7 +24,7 @@ function ControlledCarousel() {
           alt="First slide"
         />
 
-        <Carousel.Caption>
+        <Carousel.Caption className={"carousel--caption"}>
           <h3>Pothos</h3>
           <p>Beautiful cascading foilage that grows with their surrounding</p>
         </Carousel.Caption>
@@ -36,7 +36,7 @@ function ControlledCarousel() {
           alt="Second slide"
         />
 
-        <Carousel.Caption>
+        <Carousel.Caption className={"carousel--caption"}>
           <h3>Cactus</h3>
           <p>Gentle beauty with low maintenance</p>
         </Carousel.Caption>
@@ -48,7 +48,7 @@ function ControlledCarousel() {
           alt="Third slide"
         />
 
-        <Carousel.Caption>
+        <Carousel.Caption className={"carousel--caption"}>
           <h3>Philodendron</h3>
           <p>Low light topical gorgeous with beautiful foilage</p>
         </Carousel.Caption>

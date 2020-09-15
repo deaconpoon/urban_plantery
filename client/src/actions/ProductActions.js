@@ -77,7 +77,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
 const deleteProduct = (productId) => async (dispatch, getState) => {
   try {
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
     const { data } = await axios.delete("/api/products/" + productId, {

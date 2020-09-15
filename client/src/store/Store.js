@@ -23,7 +23,7 @@ import {
 } from "../reducers/OrderReducers";
 
 const cartItems = cookie.getJSON("cartItems") || [];
-const userInfo = cookie.getJSON("userInfo") || null;
+const userInfo = cookie.getJSON("userInfo") || {};
 
 const initialState = {
   cart: { cartItems, shipping: {}, payment: {} },
