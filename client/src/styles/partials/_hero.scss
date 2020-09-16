@@ -21,13 +21,13 @@
 
     &__collection {
       display: flex;
+      @include pointerOnHover();
 
       &--text {
         padding: 1em;
         background-color: $white;
         border: 1px $grey solid;
         color: $black;
-        @include pointerOnHover();
       }
       &--container {
         width: 50px;
@@ -38,8 +38,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @include pointerOnHover();
       }
       &--img {
         width: 50%;

@@ -27,7 +27,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
   return (
     <div>
       <CSSTransition classNames="fade" in={isOpen} appear={isOpen}>
-        <div className="overlay"></div>
+        <div className="overlay" onClick={() => setIsOpen(!isOpen)}></div>
       </CSSTransition>
       <CSSTransition classNames="translate-left" in={isOpen}>
         <session className="cart">

@@ -4,7 +4,6 @@ import About from "./About";
 import Specialty from "./Specialty";
 import NewProduct from "./NewProduct";
 import Testimonial from "./Testimonial";
-import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <Specialty></Specialty>
       <NewProduct></NewProduct>
       <Testimonial></Testimonial>
-      <Newsletter></Newsletter>
     </main>
   );
 };

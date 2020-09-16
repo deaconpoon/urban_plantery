@@ -19,15 +19,25 @@ import PlaceOrder from "./PlaceOrder";
 import Order from "./Order";
 import Profile from "./Profile";
 import OrdersAdmin from "./OrdersAdmin";
+import Menu from "./Menu";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <Router>
       <div>
         {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>}
-        <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
+        {menuOpen && (
+          <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Menu>
+        )}
+        <Nav
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        ></Nav>
 
         <Switch>
           <Route path="/" exact={true} component={Home}></Route>
