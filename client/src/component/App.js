@@ -10,6 +10,7 @@ import Shop from "./Shop";
 import Product from "./Product";
 import Cart from "./Cart";
 import AboutUs from "./AboutUs";
+import Contact from "./Contact";
 
 import SignInUser from "./SignInUser";
 import RegisterUser from "./RegisterUser";
@@ -49,6 +50,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact={true} component={Home}></Route>
           <Route path="/about" component={AboutUs}></Route>
+          <Route path="/contact" component={Contact}></Route>
           <Route path="/register" component={RegisterUser}></Route>
           <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>

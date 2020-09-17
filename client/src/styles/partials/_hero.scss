@@ -46,6 +46,10 @@
     &__arrow {
       position: absolute;
       bottom: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
       &--img {
         height: 54px;
         width: 54px;
