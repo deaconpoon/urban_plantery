@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "../styles/main.scss";
@@ -9,6 +9,7 @@ import Home from "./Home";
 import Shop from "./Shop";
 import Product from "./Product";
 import Cart from "./Cart";
+import AboutUs from "./AboutUs";
 
 import SignInUser from "./SignInUser";
 import RegisterUser from "./RegisterUser";
@@ -25,6 +26,12 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  //Disable scroll when cart or menu is oepn
+  useEffect(() => {
+    isOpen || menuOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+  }, [isOpen || menuOpen]);
   return (
     <Router>
       <div>
@@ -41,6 +48,7 @@ const App = () => {
 
         <Switch>
           <Route path="/" exact={true} component={Home}></Route>
+          <Route path="/about" component={AboutUs}></Route>
           <Route path="/register" component={RegisterUser}></Route>
           <Route path="/signin" component={SignInUser}></Route>
           <Route path="/products/:id" component={Product}></Route>
