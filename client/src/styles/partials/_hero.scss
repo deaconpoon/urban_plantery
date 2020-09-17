@@ -3,14 +3,12 @@
   background-size: cover;
 
   height: 100vh;
-  display: flex;
+  @include flexCenter(column);
+  scroll-behavior: smooth;
 
   &__content {
-    @include flexCenter(column);
-    margin: auto;
     padding: 0 1em;
-
-    color: $white;
+    color: white;
     &__title {
       @include titleText();
 
@@ -21,6 +19,7 @@
 
     &__collection {
       display: flex;
+      justify-content: center;
       @include pointerOnHover();
 
       &--text {
@@ -42,6 +41,14 @@
       &--img {
         width: 50%;
         height: 50%;
+      }
+    }
+    &__arrow {
+      position: absolute;
+      bottom: 0;
+      &--img {
+        height: 54px;
+        width: 54px;
       }
     }
   }
