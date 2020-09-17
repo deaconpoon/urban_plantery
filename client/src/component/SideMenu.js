@@ -4,10 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { listProducts } from "../actions/ProductActions";
 
-const SideMenu = () => {
-  /*   const productList = useSelector((state) => state.productList);
-  const { products } = productList;
- */
+const SideMenu = ({ menuOpen, setMenuOpen }) => {
   const [productsCategory, setProductsCategory] = useState([]);
 
   const renderProducts = async () => {
@@ -37,7 +34,13 @@ const SideMenu = () => {
         <Link to={"/products"}>All</Link>
       </li>
       {productsCategory.map((product) => (
-        <li key="genus" className="shop__aside__list__item">
+        <li
+          onClick={(e) =>
+            setMenuOpen ? setMenuOpen(!menuOpen) : e.preventDefault
+          }
+          key="genus"
+          className="shop__aside__list__item"
+        >
           <Link to={"/category/" + product}>{product}</Link>
         </li>
       ))}

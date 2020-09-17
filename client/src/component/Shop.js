@@ -9,16 +9,21 @@ import SideMenu from "./SideMenu";
 const Shop = (props) => {
   const [filtered, setFiltered] = useState(false);
   const [categorySet, setCategorySet] = useState(null);
-  const [searchKeyword, setSearchKeyword] = useState("");
+
   const [sortOrder, setSortOrder] = useState("");
   const category = props.match.params.id ? props.match.params.id : "";
+  const searchStr = props.location.search;
+  const searchKeyword = searchStr
+    ? searchStr.slice(searchStr.indexOf("=") + 1, searchStr.length)
+    : searchStr;
+
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listProducts(category));
-  }, [category]);
+    dispatch(listProducts(category, searchKeyword));
+  }, [category || searchKeyword]);
 
   const openFilter = () => {
     document.querySelector(".shop__aside__list").classList.add("hide");
@@ -41,7 +46,7 @@ const Shop = (props) => {
   };
   const sortHandler = (e) => {
     setSortOrder(e.target.value);
-    dispatch(listProducts(category, searchKeyword, sortOrder));
+    dispatch(listProducts(category, sortOrder));
   };
 
   return loading ? (

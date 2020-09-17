@@ -3,6 +3,9 @@ import { CSSTransition } from "react-transition-group";
 import cross from "../asset/cross.svg";
 import SideMenu from "./SideMenu";
 import search from "../asset/search.svg";
+import { listProducts } from "../actions/ProductActions";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -27,9 +30,15 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
 
     return expand ? openExpand() : closeExpand();
   };
+  const dispatch = useDispatch();
+
+  const history = useHistory();
 
   const submitHandler = (e) => {
     e.preventDefault();
+    history.push("/products?");
+    dispatch(listProducts(searchKeyword));
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -55,7 +64,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
           <div className="menu__body__wrapper">
             <div className="menu__body">
               <div className="menu__body__search menu__items">
-                <form className="menu__body__search--bar">
+                <form
+                  onSubmit={submitHandler}
+                  className="menu__body__search--bar"
+                >
                   <input
                     className="menu__body__search--input"
                     type="text"
@@ -65,7 +77,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                     onChange={(e) => setSearchKeyword(e.target.value)}
                   ></input>
                 </form>
-                <span className="menu__body__search--icon">
+                <span
+                  onClick={submitHandler}
+                  className="menu__body__search--icon"
+                >
                   <img
                     alt="search"
                     src={search}
@@ -85,11 +100,14 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                   </div>
                 </div>
                 <ul className="menu__body__shop--items hide">
-                  <SideMenu></SideMenu>
+                  <SideMenu
+                    menuOpen={menuOpen}
+                    setMenuOpen={setMenuOpen}
+                  ></SideMenu>
                 </ul>
               </div>
-              <h2 className="menu__items">About</h2>
-              <h2 className="menu__items">Contact</h2>
+              <h2 className="menu__body__about menu__items">About</h2>
+              <h2 className="menu__body__contact menu__items">Contact</h2>
             </div>
           </div>
         </session>
