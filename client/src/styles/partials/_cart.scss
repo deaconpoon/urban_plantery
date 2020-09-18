@@ -25,11 +25,22 @@
         @extend .nav__container--4;
       }
     }
+    &__cross {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   &__signin {
     display: flex;
     justify-content: flex-end;
     font-family: $font-primary;
+
+    &__logout {
+      &:hover {
+        cursor: pointer;
+      }
+    }
     &__name {
       font-weight: $font-mid-weight;
       margin-right: 2em;
@@ -142,6 +153,9 @@
 
       &--arithmetic {
         @include squareSizing(16px);
+        &:hover {
+          cursor: pointer;
+        }
       }
       &__amount {
         flex-grow: 4;
@@ -155,11 +169,15 @@
     }
     &__delete {
       @include squareSizing(10px);
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   &-item {
     &--container {
       display: flex;
+      margin-bottom: 1em;
     }
   }
   &--image {

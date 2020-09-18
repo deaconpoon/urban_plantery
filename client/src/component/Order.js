@@ -36,7 +36,7 @@ function Order(props) {
       <div className="placeorder">
         <div className="placeorder-info">
           <div>
-            <h3>Shipping</h3>
+            <h3 className="form__title">Shipping</h3>
             <div>
               {order.shipping.address}, {order.shipping.city},
               {order.shipping.postalCode}, {order.shipping.country},
@@ -48,31 +48,39 @@ function Order(props) {
             </div>
           </div>
           <div>
-            <h3>Payment</h3>
+            <h3 className="form__title">Payment</h3>
             <div>Payment Method: {order.payment.paymentMethod}</div>
             <div>{order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}</div>
           </div>
           <div>
             <ul className="cart-list-container">
               <li>
-                <h3>Shopping Cart</h3>
-                <div>Price</div>
+                <h3 className="form__title">Shopping Cart</h3>
               </li>
               {order.orderItems.length === 0 ? (
                 <div>Cart is empty</div>
               ) : (
                 order.orderItems.map((item) => (
-                  <li key={item._id}>
-                    <div className="cart-image">
-                      <img src={item.image} alt="product" />
+                  <li className="cart-item--container">
+                    <div>
+                      <img
+                        className="cart--image"
+                        src={item.image}
+                        alt="product"
+                      />
                     </div>
-                    <div className="cart-name">
-                      <div>
-                        <Link to={"/product/" + item.product}>{item.name}</Link>
+                    <div className="cart-item--container--2">
+                      <div className="cart--name">
+                        <div>
+                          <Link to={"/product/" + item.product}>
+                            {item.name}
+                          </Link>
+                        </div>
+                        <div>Quantity: {item.quantity}</div>
+
+                        <div className="cart-price">${item.price}</div>
                       </div>
-                      <div>Qty: {item.qty}</div>
                     </div>
-                    <div className="cart-price">${item.price}</div>
                   </li>
                 ))
               )}
@@ -91,7 +99,7 @@ function Order(props) {
               )}
             </li>
             <li>
-              <h3>Order Summary</h3>
+              <h3 className="form__title">Order Summary</h3>
             </li>
             <li>
               <div>Items</div>
@@ -105,7 +113,7 @@ function Order(props) {
               <div>Tax</div>
               <div>${order.taxPrice}</div>
             </li>
-            <li>
+            <li className="placeorder-action--total">
               <div>Order Total</div>
               <div>${order.totalPrice}</div>
             </li>

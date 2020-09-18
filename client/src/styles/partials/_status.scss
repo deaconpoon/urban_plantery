@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   width: 40rem;
-  margin: 1rem auto;
+  margin: 6em auto;
 }
 .checkout-steps > div {
   border-top: 0.3rem #c0c0c0 solid;
@@ -105,6 +105,9 @@
     font-size: 2rem;
     font-weight: bold;
     color: $maingreen;
+  }
+  @include tablet() {
+    margin-left: 2em;
   }
 }
 .placeorder-actions-payment > div {

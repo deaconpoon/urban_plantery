@@ -34,9 +34,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
           <div className="cart__container">
             <div className="cart__header__wrapper">
               <header className="cart__header">
-                <div className="cart__header__container">
-                  Free Shipping for All Location!
-                </div>
+                <div className="cart__header__container"></div>
                 <div
                   onClick={() => setIsOpen(!isOpen)}
                   className="cart__header__container--2"
@@ -57,7 +55,12 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                       <div className="cart__signin__name">
                         Welcome back, {userInfo.name}{" "}
                       </div>
-                      <div onClick={handleLogout}>Logout</div>
+                      <div
+                        className="cart__signin__logout"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </div>
                     </div>
                   ) : (
                     <div className="cart__signin__signin">
@@ -77,12 +80,18 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                 </div>
                 <div className="cart__body__container--2">
                   <div className="cart__body__items">
-                    <div className="cart__body__items--text">Items</div>
-                    <div className="cart__body__items--amount">$100</div>
+                    <div className="cart__body__items--text">Subtotal</div>
+                    <div className="cart__body__items--amount">
+                      {cartItems.length <= 1
+                        ? cartItems[0].quantity
+                        : cartItems.reduce((a, c) => a + c.quantity, 0)}
+                    </div>
                   </div>
                   <div className="cart__body__shipping">
                     <div className="cart__body__shipping--text">Shipping</div>
-                    <div className="cart__body__shipping--amount">Free</div>
+                    <div className="cart__body__shipping--amount">
+                      To be confirm
+                    </div>
                   </div>
                   <div className="cart__body__total">
                     <div className="cart__body__total--text">Total</div>
