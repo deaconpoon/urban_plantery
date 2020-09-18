@@ -52,6 +52,7 @@ router.post("/register", async (req, res) => {
     password: req.body.password,
   });
   const newUser = await user.save();
+
   if (newUser) {
     res.send({
       _id: newUser.id,

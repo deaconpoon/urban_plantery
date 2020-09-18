@@ -70,4 +70,21 @@
       @extend .form__email--input;
     }
   }
+  &--input {
+    @extend .form__email--input;
+  }
+  &__title {
+    @extend .form__signIn--title;
+    margin-bottom: 2em;
+  }
+
+  &--entry {
+    margin-bottom: 1em;
+    &--confirmPw {
+      margin-bottom: 3em;
+    }
+    &--register {
+      margin-bottom: 3em;
+    }
+  }
 }
