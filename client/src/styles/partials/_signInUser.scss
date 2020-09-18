@@ -1,9 +1,73 @@
 .form {
   margin-top: 6em;
+  font-family: $font-primary;
+
+  &__container {
+    @include tablet() {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__body {
+    padding: 5em 1em;
+    width: 100%;
+
+    li {
+      margin-bottom: 2em;
+    }
+    &__or {
+      font-family: $font-secondary;
+      font-size: $font-large;
+      display: flex;
+      justify-content: center;
+
+      @include tablet() {
+        flex-flow: column;
+        margin: 0 1em;
+      }
+    }
+    &__register {
+      margin: 0;
+      width: 100%;
+
+      @extend .form__body;
+      &--title {
+        font-family: $font-secondary;
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+  &__signIn {
+    @extend .product__detail__add;
+    &--title {
+      font-family: $font-secondary;
+    }
+  }
 
   &__submit {
     &__btn {
-      @extend .quantity-btn;
+      @extend .product__detail__add;
+      background-color: $maingreen;
+    }
+  }
+  &__email {
+    &--input {
+      appearance: none;
+      background: none;
+      width: 100%;
+      border: 1px solid black;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__password {
+    &--input {
+      @extend .form__email--input;
     }
   }
 }

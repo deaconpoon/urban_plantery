@@ -36,8 +36,18 @@
     margin-bottom: 0;
   }
   &__detail {
+    margin-top: $section-bottom;
     margin-bottom: $section-bottom;
 
+    &__image {
+      height: 600px;
+      width: 100%;
+      object-fit: cover;
+
+      @include tablet() {
+        max-height: 800px;
+      }
+    }
     @include tablet() {
       display: flex;
       flex-flow: row;
@@ -88,6 +98,15 @@
       text-align: center;
       background-color: $black;
       color: $white;
+      &:hover {
+        opacity: 80%;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        transform: scale(0.99);
+      }
     }
   }
 }

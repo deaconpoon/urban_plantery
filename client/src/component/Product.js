@@ -11,6 +11,7 @@ const Product = (props) => {
   /* const product = data.products.find((x) => x._id === props.match.params.id); */
   const productDetail = useSelector((state) => state.productDetail);
   const { product, loading, error } = productDetail;
+
   const productId = props.match.params.id;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,6 +42,7 @@ const Product = (props) => {
           <div className="product__detail__container--2">
             <div className="product__detail__name">{product.name}</div>
             <div className="product__detail__price">$ {product.price}</div>
+            <p>{product.description}</p>
             <div className="product__detail__container--3">
               <div className="product__detail__quantity">Quantity</div>
 
@@ -51,9 +53,12 @@ const Product = (props) => {
               ></QuantityBtn>
             </div>
             {product.countInStock > 0 ? (
-              <div onClick={handleAddToCart} className="product__detail__add">
+              <button
+                onClick={handleAddToCart}
+                className="product__detail__add"
+              >
                 Add to Cart
-              </div>
+              </button>
             ) : (
               <div>Out of Stock</div>
             )}

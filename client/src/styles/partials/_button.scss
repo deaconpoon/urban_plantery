@@ -7,6 +7,10 @@
 
   &--arithmetic {
     @include squareSizing(16px);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__amount {
     flex-grow: 4;
