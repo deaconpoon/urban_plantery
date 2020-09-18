@@ -1,5 +1,6 @@
 .footer {
   &__container {
+    margin-top: $section-bottom;
     @include tablet() {
       display: flex;
       justify-content: space-between;
