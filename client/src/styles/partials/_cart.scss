@@ -157,4 +157,18 @@
       @include squareSizing(10px);
     }
   }
+  &-item {
+    &--container {
+      display: flex;
+    }
+  }
+  &--image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 3em;
+  }
+  &--name div {
+    margin-bottom: 1em;
+  }
 }
