@@ -21,58 +21,64 @@ function Shipping(props) {
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>
-      <div className="form">
-        <form onSubmit={submitHandler}>
-          <ul className="form-container">
-            <li>
-              <h2>Shipping</h2>
-            </li>
+      <body className="section">
+        <div className="form">
+          <form onSubmit={submitHandler}>
+            <ul className="form-container">
+              <li>
+                <h2 className="form__title">Shipping</h2>
+              </li>
 
-            <li>
-              <label htmlFor="address">Address</label>
-              <input
-                type="text"
-                name="address"
-                id="address"
-                onChange={(e) => setAddress(e.target.value)}
-              ></input>
-            </li>
-            <li>
-              <label htmlFor="city">City</label>
-              <input
-                type="text"
-                name="city"
-                id="city"
-                onChange={(e) => setCity(e.target.value)}
-              ></input>
-            </li>
-            <li>
-              <label htmlFor="postalCode">Postal Code</label>
-              <input
-                type="text"
-                name="postalCode"
-                id="postalCode"
-                onChange={(e) => setPostalCode(e.target.value)}
-              ></input>
-            </li>
-            <li>
-              <label htmlFor="country">Country</label>
-              <input
-                type="text"
-                name="country"
-                id="country"
-                onChange={(e) => setCountry(e.target.value)}
-              ></input>
-            </li>
+              <li className="form--entry">
+                <label htmlFor="address">Address</label>
+                <input
+                  className="form--input"
+                  type="text"
+                  name="address"
+                  id="address"
+                  onChange={(e) => setAddress(e.target.value)}
+                ></input>
+              </li>
+              <li className="form--entry">
+                <label htmlFor="city">City</label>
+                <input
+                  className="form--input"
+                  type="text"
+                  name="city"
+                  id="city"
+                  onChange={(e) => setCity(e.target.value)}
+                ></input>
+              </li>
+              <li className="form--entry">
+                <label htmlFor="postalCode">Postal Code</label>
+                <input
+                  className="form--input"
+                  type="text"
+                  name="postalCode"
+                  id="postalCode"
+                  onChange={(e) => setPostalCode(e.target.value)}
+                ></input>
+              </li>
+              <li className="form--entry form--entry--country">
+                <label htmlFor="country">Country</label>
+                <input
+                  className="form--input"
+                  type="text"
+                  name="country"
+                  id="country"
+                  onChange={(e) => setCountry(e.target.value)}
+                ></input>
+              </li>
 
-            <li>
-              <button type="submit" className="button primary">
-                Continue
-              </button>
-            </li>
-          </ul>
-        </form>
-      </div>
+              <li>
+                <button type="submit" className="form__signIn">
+                  Continue
+                </button>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </body>
     </div>
   );
 }

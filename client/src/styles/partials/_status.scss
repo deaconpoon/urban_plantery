@@ -64,8 +64,8 @@
   padding-top: 1rem;
 }
 .checkout-steps > div.active {
-  border-top: 0.3rem #f08000 solid;
-  color: #f08000;
+  border-top: 0.3rem $maingreen solid;
+  color: $maingreen;
 }
 
 .placeorder {
