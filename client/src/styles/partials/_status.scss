@@ -51,65 +51,6 @@
     transition: all 500ms ease;
   }
 }
-.checkout-steps {
-  display: flex;
-  justify-content: space-between;
-  width: 40rem;
-  margin: 6em auto;
-}
-.checkout-steps > div {
-  border-top: 0.3rem #c0c0c0 solid;
-  color: #c0c0c0;
-  flex: 1 1;
-  padding-top: 1rem;
-}
-.checkout-steps > div.active {
-  border-top: 0.3rem $maingreen solid;
-  color: $maingreen;
-}
-
-.placeorder {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  justify-content: space-between;
-}
-.placeorder-info {
-  flex: 3 1 60rem;
-}
-.placeorder-action {
-  flex: 1 1 20rem;
-  border: 1px $black solid;
-
-  padding: 1rem;
-}
-.placeorder-info > div {
-  border: 1px $black solid;
-  margin-bottom: 2em;
-  padding: 1rem;
-}
-.placeorder-info > div:first-child {
-  margin-top: 0;
-}
-.placeorder-action > ul {
-  padding: 0;
-  list-style-type: none;
-}
-.placeorder-action > ul > li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-.placeorder-action {
-  &--total {
-    font-size: 2rem;
-    font-weight: bold;
-    color: $maingreen;
-  }
-  @include tablet() {
-    margin-left: 2em;
-  }
-}
-.placeorder-actions-payment > div {
-  width: 100%;
+.underline {
+  border-bottom: 1px solid black;
 }

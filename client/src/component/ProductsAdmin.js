@@ -79,12 +79,12 @@ const ProductsAdmin = (props) => {
   /*   const uploadFileHandler = (e) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();
-    bodyFormData.append('image', file);
+    bodyFormData.append("image", file);
     setUploading(true);
     axios
-      .post('/api/uploads', bodyFormData, {
+      .post("/api/uploads", bodyFormData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       })
       .then((response) => {
@@ -95,12 +95,12 @@ const ProductsAdmin = (props) => {
         console.log(err);
         setUploading(false);
       });
-  }; */
-
+  };
+ */
   return (
     <div>
-      <div className="product-header">
-        <h3>Products</h3>
+      <div className="product__header">
+        <h3 className="form__title">Products</h3>
 
         <button className="button primary" onClick={() => openModal({})}>
           Create Product
@@ -111,7 +111,7 @@ const ProductsAdmin = (props) => {
           <form onSubmit={submitHandler}>
             <ul className="form__container">
               <li>
-                <h2>Create Product</h2>
+                <h2 className="form__title">Create Product</h2>
               </li>
 
               <li>

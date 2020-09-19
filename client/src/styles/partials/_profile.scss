@@ -1,0 +1,36 @@
+.profile {
+  &__container {
+    display: flex;
+  }
+  &__aside {
+    display: flex;
+    flex-flow: column;
+    margin-right: 2em;
+    margin-top: 6em;
+    padding-top: 14em;
+    padding-right: 6em;
+    border-right: 1px solid black;
+
+    button {
+      margin-bottom: 0.5em;
+      padding-bottom: 0.25em;
+      text-align: left;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__logout {
+    margin-top: 3em;
+    text-align: right;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.product__header {
+  margin-top: 6em;
+}

@@ -31,7 +31,7 @@ function OrdersAdmin(props) {
   ) : (
     <div className="content content-margined">
       <div className="order-header">
-        <h3>Orders</h3>
+        <h3 className="form__title">Orders</h3>
       </div>
       <div className="order-list">
         <table className="table">

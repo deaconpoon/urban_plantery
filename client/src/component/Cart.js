@@ -74,7 +74,13 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                     {cartItems.length === 0 ? (
                       <div>Cart is empty </div>
                     ) : (
-                      cartItems.map((item) => <CartItem item={item}></CartItem>)
+                      cartItems.map((item) => (
+                        <CartItem
+                          isOpen={isOpen}
+                          setIsOpen={setIsOpen}
+                          item={item}
+                        ></CartItem>
+                      ))
                     )}
                   </div>
                 </div>
