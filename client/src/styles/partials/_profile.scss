@@ -7,7 +7,7 @@
     flex-flow: column;
     margin-right: 2em;
     margin-top: 6em;
-    padding-top: 14em;
+    padding-top: 6em;
     padding-right: 6em;
     border-right: 1px solid black;
 
@@ -33,4 +33,7 @@
 }
 .product__header {
   margin-top: 6em;
+}
+.productAdmin__container {
+  width: 100%;
 }

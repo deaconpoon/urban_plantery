@@ -93,4 +93,47 @@
   &--paypal {
     margin-bottom: 3em;
   }
+  &__profile {
+    &__container {
+      margin-bottom: 3em;
+    }
+  }
+  &__create {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    @extend .form__profile__container;
+
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      outline: none;
+    }
+    &--arrow {
+      @extend .menu__body__search--icon;
+    }
+    &--btn {
+      margin-bottom: 0;
+      margin-right: 1em;
+
+      &:hover {
+        color: $maingreen;
+        cursor: pointer;
+      }
+    }
+    &__body {
+      margin-bottom: 3em;
+    }
+  }
+  &__update {
+    @extend .form__signIn;
+    margin-bottom: 1em;
+  }
+  &__back {
+    @extend .form__signIn;
+    background-color: white;
+    color: black;
+    border: 1px black solid;
+  }
 }

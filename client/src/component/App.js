@@ -63,9 +63,6 @@ const App = () => {
 
           <Route path="/category/:id" component={Shop}></Route>
 
-          <Route path="/productsadmin" component={ProductsAdmin}></Route>
-          <Route path="/orderadmin" component={OrdersAdmin}></Route>
-
           <Route path="/cart" component={Cart}></Route>
         </Switch>
 

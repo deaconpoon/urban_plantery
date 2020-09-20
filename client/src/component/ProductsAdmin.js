@@ -6,6 +6,8 @@ import {
   listProducts,
   deleteProduct,
 } from "../actions/ProductActions";
+import arrow from "../asset/arrow.svg";
+import { model } from "mongoose";
 
 const ProductsAdmin = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -44,6 +46,12 @@ const ProductsAdmin = (props) => {
     };
   }, [successSave, successDelete]);
 
+  useEffect(() => {
+    const arrow = document.querySelector(".form__create--arrow");
+
+    modalVisible ? arrow.classList.remove("flip") : arrow.classList.add("flip");
+  }, [modalVisible]);
+
   const openModal = (product) => {
     setModalVisible(true);
     setId(product._id);
@@ -58,7 +66,7 @@ const ProductsAdmin = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("fire");
+
     dispatch(
       saveProduct({
         _id: id,
@@ -100,23 +108,24 @@ const ProductsAdmin = (props) => {
   return (
     <div>
       <div className="product__header">
-        <h3 className="form__title">Products</h3>
+        <button className="form__create" onClick={() => openModal({})}>
+          <h2 className="form__title form__create--btn">Create Product</h2>
 
-        <button className="button primary" onClick={() => openModal({})}>
-          Create Product
+          <img
+            alt="arrow"
+            src={arrow}
+            className="form__create--arrow flip"
+          ></img>
         </button>
       </div>
       {modalVisible && (
-        <div className="form">
+        <div className="form__create__body">
           <form onSubmit={submitHandler}>
-            <ul className="form__container">
-              <li>
-                <h2 className="form__title">Create Product</h2>
-              </li>
-
-              <li>
+            <div>
+              <li className="form--entry">
                 <label htmlFor="name">Name</label>
                 <input
+                  className="form--input"
                   type="text"
                   name="name"
                   value={name}
@@ -124,9 +133,10 @@ const ProductsAdmin = (props) => {
                   onChange={(e) => setName(e.target.value)}
                 ></input>
               </li>
-              <li>
+              <li className="form--entry">
                 <label htmlFor="image">Image</label>
                 <input
+                  className="form--input"
                   type="text"
                   id="image"
                   value={image}
@@ -136,9 +146,10 @@ const ProductsAdmin = (props) => {
                 {/*     <input type="file" onChange={uploadFileHandler}></input>
                       {uploading && <div>Uploading...</div>} */}
               </li>
-              <li>
+              <li className="form--entry">
                 <label htmlFor="category">Category</label>
                 <input
+                  className="form--input"
                   type="text"
                   value={category}
                   id="category"
@@ -146,9 +157,10 @@ const ProductsAdmin = (props) => {
                   onChange={(e) => setCategory(e.target.value)}
                 ></input>
               </li>
-              <li>
+              <li className="form--entry">
                 <label htmlFor="price">Price</label>
                 <input
+                  className="form--input"
                   type="text"
                   id="price"
                   value={price}
@@ -156,9 +168,10 @@ const ProductsAdmin = (props) => {
                   onChange={(e) => setPrice(e.target.value)}
                 ></input>
               </li>
-              <li>
+              <li className="form--entry">
                 <label htmlFor="countInStock">CountInStock</label>
                 <input
+                  className="form--input"
                   type="text"
                   id="countInStock"
                   value={countInStock}
@@ -166,9 +179,10 @@ const ProductsAdmin = (props) => {
                   onChange={(e) => setCountInStock(e.target.value)}
                 ></input>
               </li>
-              <li>
+              <li className="form--entry">
                 <label htmlFor="description">Description</label>
                 <textarea
+                  className="form--input"
                   name="description"
                   value={description}
                   id="description"
@@ -176,25 +190,26 @@ const ProductsAdmin = (props) => {
                 ></textarea>
               </li>
               <li>
-                <button type="submit" className="form__submit">
+                <button type="submit" className="form__update">
                   {id ? "Update" : "Create"}
                 </button>
               </li>
               <li>
                 <button
+                  className="form__back"
                   type="button"
                   onClick={() => setModalVisible(false)}
-                  className="button secondary"
                 >
                   Back
                 </button>
               </li>
-            </ul>
+            </div>
           </form>
         </div>
       )}
 
       <div className="product-list">
+        <h3 className="form__title">Products</h3>
         <table className="table">
           <thead>
             <tr>

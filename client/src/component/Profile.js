@@ -81,7 +81,7 @@ function Profile(props) {
               <div className="profile-info">
                 <div className="form">
                   <form onSubmit={submitHandler}>
-                    <ul className="form-container">
+                    <div className="form__profile__container">
                       <li>
                         <h2 className="form__title">User Profile</h2>
                       </li>
@@ -129,7 +129,7 @@ function Profile(props) {
                           Update
                         </button>
                       </li>
-                    </ul>
+                    </div>
                   </form>
                 </div>
               </div>
