@@ -73,6 +73,9 @@
         text-transform: capitalize;
         a {
           color: $grey;
+          &:hover {
+            color: $grey;
+          }
         }
       }
     }

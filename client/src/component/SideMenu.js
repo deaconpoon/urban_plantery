@@ -29,7 +29,13 @@ const SideMenu = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <Fragment>
-      <li key="genus" className="shop__aside__list__item">
+      <li
+        onClick={(e) =>
+          setMenuOpen ? setMenuOpen(!menuOpen) : e.preventDefault
+        }
+        key="genus"
+        className="shop__aside__list__item"
+      >
         <Link to={"/products"}>All</Link>
       </li>
       {productsCategory.map((product) => (

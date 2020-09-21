@@ -34,6 +34,9 @@
     margin-bottom: 5em;
     a {
       color: black;
+      &:hover {
+        color: black;
+      }
     }
   }
 }

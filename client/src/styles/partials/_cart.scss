@@ -104,8 +104,18 @@
       background-color: $black;
       color: $white;
       @include flexCenter(column);
+      &:hover {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
       &--btn {
         color: $white;
+        &:hover {
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+        }
       }
     }
   }

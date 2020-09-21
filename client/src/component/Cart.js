@@ -99,7 +99,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                       {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                     </div>
                   </div>
-                  <div className="cart__body__checkout">
+                  <button className="cart__body__checkout">
                     <Link
                       to="/signin?redirect=shipping"
                       className="cart__body__checkout--btn"
@@ -107,7 +107,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                     >
                       CHECK OUT
                     </Link>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
