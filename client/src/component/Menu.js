@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { CSSTransition } from "react-transition-group";
 import cross from "../asset/cross.svg";
 import SideMenu from "./SideMenu";
@@ -123,8 +123,11 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
               >
                 Contact
               </h2>
-
-              <h2 onClick={() => handleRedirect("profile")}>Profile</h2>
+              {userInfo ? (
+                <h2 onClick={() => handleRedirect("profile")}>Profile</h2>
+              ) : (
+                <Fragment></Fragment>
+              )}
             </div>
           </div>
         </session>
