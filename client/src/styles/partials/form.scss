@@ -95,6 +95,7 @@
   }
   &__profile {
     &__container {
+      max-width: 800px;
       margin-bottom: 3em;
     }
   }
@@ -124,6 +125,7 @@
     }
     &__body {
       margin-bottom: 3em;
+      max-width: 500px;
     }
   }
   &__update {
@@ -135,6 +137,16 @@
     background-color: white;
     color: black;
     border: 1px black solid;
+  }
+  &__product {
+    &__table {
+      overflow: scroll;
+    }
+  }
+  &__orders {
+    &__body {
+      overflow: scroll;
+    }
   }
 }
 

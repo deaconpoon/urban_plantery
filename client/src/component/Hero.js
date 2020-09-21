@@ -30,6 +30,7 @@ const Hero = () => {
 
               <div className="hero__content__collection--container">
                 <img
+                  alt="link to shop"
                   className="hero__content__collection--img"
                   src={arrow}
                 ></img>
@@ -41,7 +42,11 @@ const Hero = () => {
           onClick={() => scrollToRef(myRef)}
           className="hero__content__arrow"
         >
-          <img className="hero__content__arrow--img" src={arrowWhite}></img>
+          <img
+            alt="button to scroll to about section"
+            className="hero__content__arrow--img"
+            src={arrowWhite}
+          ></img>
         </button>
       </div>
       <div ref={myRef}></div>

@@ -21,12 +21,12 @@ const Nav = ({ isOpen, setIsOpen, menuOpen, setMenuOpen }) => {
               onClick={() => setMenuOpen(!menuOpen)}
               className="nav__container--2"
             >
-              <img className="nav__image" src={menuLogo}></img>
+              <img alt="menu icon" className="nav__image" src={menuLogo}></img>
             </button>
             <div className="nav__container--3">
               <img
                 onClick={handleClick}
-                alt="logo"
+                alt="urban plantery logo"
                 className="nav__logo"
                 src={logo}
               ></img>
@@ -35,7 +35,7 @@ const Nav = ({ isOpen, setIsOpen, menuOpen, setMenuOpen }) => {
               onClick={() => setIsOpen(!isOpen)}
               className="nav__container--4"
             >
-              <img className="nav__cart" src={cart}></img>
+              <img alt="cart icon" className="nav__cart" src={cart}></img>
             </button>
           </div>
         </div>

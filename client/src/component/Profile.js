@@ -33,7 +33,7 @@ function Profile(props) {
     const orders = document.querySelector(".profile__aside--orders");
     const products = document.querySelector(".profile__aside--products");
 
-    if (tab == "products") {
+    if (tab === "products") {
       products.classList.remove("underline");
       setTab("orders");
       orders.classList.add("underline");
@@ -80,7 +80,7 @@ function Profile(props) {
             )}
           </aside>
 
-          {tab == "orders" ? (
+          {tab === "orders" ? (
             <div className="order__container">
               <div className="profile-info">
                 <div className="form">

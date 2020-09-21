@@ -50,6 +50,12 @@
       &:hover {
         cursor: pointer;
       }
+      &:active {
+        outline: none;
+      }
+      &:focus {
+        outline: none;
+      }
       &--img {
         height: 54px;
         width: 54px;

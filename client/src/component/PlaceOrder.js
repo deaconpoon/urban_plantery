@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CheckoutSteps from "../component/CheckoutSteps";
 import { createOrder } from "../actions/OrderActions";
-import PaypalButton from "../component/PaypalButton";
 
 function PlaceOrder(props) {
   const cart = useSelector((state) => state.cart);

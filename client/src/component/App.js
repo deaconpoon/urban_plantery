@@ -14,13 +14,13 @@ import Contact from "./Contact";
 
 import SignInUser from "./SignInUser";
 import RegisterUser from "./RegisterUser";
-import ProductsAdmin from "./ProductsAdmin";
+
 import Shipping from "./Shipping";
 import Payment from "./Payment";
 import PlaceOrder from "./PlaceOrder";
 import Order from "./Order";
 import Profile from "./Profile";
-import OrdersAdmin from "./OrdersAdmin";
+
 import Menu from "./Menu";
 
 const App = () => {

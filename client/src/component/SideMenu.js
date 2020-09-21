@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+
 import axios from "axios";
-import { listProducts } from "../actions/ProductActions";
 
 const SideMenu = ({ menuOpen, setMenuOpen }) => {
   const [productsCategory, setProductsCategory] = useState([]);

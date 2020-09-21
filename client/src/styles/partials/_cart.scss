@@ -104,6 +104,9 @@
       background-color: $black;
       color: $white;
       @include flexCenter(column);
+      &--btn {
+        color: $white;
+      }
     }
   }
   &__container {

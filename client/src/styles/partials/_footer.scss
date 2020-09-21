@@ -32,5 +32,8 @@
     display: grid;
     grid: auto / repeat(2, 1fr);
     margin-bottom: 5em;
+    a {
+      color: black;
+    }
   }
 }

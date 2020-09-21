@@ -211,7 +211,7 @@ const ProductsAdmin = (props) => {
 
       <div className="product-list">
         <h3 className="form__title">Products</h3>
-        <table className="table">
+        <table className="form__product__table table">
           <thead>
             <tr>
               <th>ID</th>

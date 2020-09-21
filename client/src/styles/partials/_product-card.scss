@@ -18,6 +18,9 @@
   &__name {
     color: $black;
     margin-bottom: 0.5em;
+    a {
+      color: black;
+    }
   }
   &__price {
     color: $grey;

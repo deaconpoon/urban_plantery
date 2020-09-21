@@ -18,6 +18,7 @@ const CartItem = ({ item, isOpen, setIsOpen }) => {
     <div className="cart__item__container">
       <div className="cart__item__container--2">
         <img
+          alt="product-image"
           onClick={() => handleClick(item.product)}
           src={item.image}
           className="cart__item__image"
@@ -27,6 +28,7 @@ const CartItem = ({ item, isOpen, setIsOpen }) => {
         <div className="cart__item__container--4">
           <div className="cart__item__name">{item.name}</div>
           <img
+            alt="delete-button"
             onClick={handleDelete}
             src={require("../asset/cross.svg")}
             className="cart__item__delete"

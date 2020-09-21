@@ -3,7 +3,8 @@
 .section {
   width: 90%;
   margin: 0 auto;
-  min-height: 1000px;
+  min-height: 1200px;
+
   @include desktop() {
     max-width: 1600px;
   }

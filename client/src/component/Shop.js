@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+
 import { useSelector, useDispatch } from "react-redux";
 
 import { listProducts } from "../actions/ProductActions";
@@ -8,9 +8,7 @@ import SideMenu from "./SideMenu";
 
 const Shop = (props) => {
   const [filtered, setFiltered] = useState(false);
-  const [categorySet, setCategorySet] = useState(null);
 
-  const [sortOrder, setSortOrder] = useState("");
   const category = props.match.params.id ? props.match.params.id : "";
   const searchStr = props.location.search;
   const searchKeyword = searchStr
@@ -44,10 +42,10 @@ const Shop = (props) => {
 
     return filtered ? closeFilter() : openFilter();
   };
-  const sortHandler = (e) => {
+  /*   const sortHandler = (e) => {
     setSortOrder(e.target.value);
     dispatch(listProducts(category, sortOrder));
-  };
+  }; */
 
   return (
     <div className="section">

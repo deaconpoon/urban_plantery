@@ -1,25 +1,35 @@
 .profile {
   &__container {
     display: flex;
+    flex-flow: column;
+    @include tablet() {
+      flex-flow: row;
+    }
   }
   &__aside {
     display: flex;
-    flex-flow: column;
-    margin-right: 2em;
-    margin-top: 6em;
-    padding-top: 6em;
-    padding-right: 6em;
-    border-right: 1px solid black;
+    @include tablet() {
+      flex-flow: column;
+      margin-right: 2em;
+      margin-top: 6em;
+      padding-top: 6em;
+      padding-right: 6em;
+      border-right: 1px solid black;
+    }
 
     button {
       margin-bottom: 0.5em;
       padding-bottom: 0.25em;
       text-align: left;
+      margin-right: 1em;
       &:focus {
         outline: none;
       }
       &:hover {
         cursor: pointer;
+      }
+      @include tablet() {
+        margin-right: 0;
       }
     }
   }
@@ -35,5 +45,4 @@
   margin-top: 6em;
 }
 .productAdmin__container {
-  width: 100%;
 }
