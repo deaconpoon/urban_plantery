@@ -5,7 +5,7 @@
   margin: 0 auto;
   min-height: 1000px;
   @include desktop() {
-    width: 1400px;
+    max-width: 1600px;
   }
 }
 .header {

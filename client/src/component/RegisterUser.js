@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { register } from "../actions/UserActions";
+import { register, signin } from "../actions/UserActions";
 
 const RegisterUser = (props) => {
   const [name, setName] = useState("");
@@ -18,6 +18,7 @@ const RegisterUser = (props) => {
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);
+      dispatch(signin(email, password));
     }
     return () => {
       //

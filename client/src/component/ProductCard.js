@@ -1,15 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
     <li key={product._id} className="product">
       <div className="product__card">
-        <img
-          className="product__card__image"
-          src={product.image}
-          alt="new-product"
-        ></img>
+        <Link to={"/products/" + product._id}>
+          <img
+            className="product__card__image"
+            src={product.image}
+            alt="new-product"
+          ></img>
+        </Link>
         <div className="product__card__name">
           <Link to={"/products/" + product._id}>{product.name}</Link>
         </div>

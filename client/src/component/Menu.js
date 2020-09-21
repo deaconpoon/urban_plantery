@@ -4,13 +4,14 @@ import cross from "../asset/cross.svg";
 import SideMenu from "./SideMenu";
 import search from "../asset/search.svg";
 import { listProducts } from "../actions/ProductActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const [expand, setExpand] = useState(false);
-
+  const userSignIn = useSelector((state) => state.userSignIn);
+  const { userInfo } = userSignIn;
   const closeExpand = () => {
     document.querySelector(".menu__body__shop--items").classList.add("hide");
     document
@@ -122,6 +123,8 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
               >
                 Contact
               </h2>
+
+              <h2 onClick={() => handleRedirect("profile")}>Profile</h2>
             </div>
           </div>
         </session>

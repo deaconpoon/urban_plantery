@@ -27,7 +27,7 @@ const Product = (props) => {
   return (
     <section className="section">
       {loading ? (
-        <div>Loading... </div>
+        <div className="section"></div>
       ) : error ? (
         <div>{error}</div>
       ) : (

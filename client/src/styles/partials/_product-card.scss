@@ -9,7 +9,7 @@
 
     margin-bottom: 1em;
     @include tablet() {
-      max-height: 220px;
+      max-height: 400px;
     }
     @include desktop() {
       max-height: 260px;
@@ -131,9 +131,12 @@
   }
 }
 .new-product {
-  margin-bottom: $section-bottom;
+  margin-bottom: $body-bottom;
   &__section {
     width: 90%;
     margin: auto;
+    @include desktop() {
+      max-width: 1600px;
+    }
   }
 }

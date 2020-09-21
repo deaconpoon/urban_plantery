@@ -18,6 +18,7 @@ const ProductsAdmin = (props) => {
   const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState("");
   const [description, setDescription] = useState("");
+  const [uploading, setUploading] = useState(false);
 
   const productList = useSelector((state) => state.productList);
   const { loading, products, error } = productList;
@@ -84,7 +85,7 @@ const ProductsAdmin = (props) => {
     dispatch(deleteProduct(product._id));
   };
 
-  /*   const uploadFileHandler = (e) => {
+  const uploadFileHandler = (e) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();
     bodyFormData.append("image", file);
@@ -104,7 +105,7 @@ const ProductsAdmin = (props) => {
         setUploading(false);
       });
   };
- */
+
   return (
     <div>
       <div className="product__header">
@@ -143,8 +144,8 @@ const ProductsAdmin = (props) => {
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                 ></input>
-                {/*     <input type="file" onChange={uploadFileHandler}></input>
-                      {uploading && <div>Uploading...</div>} */}
+                <input type="file" onChange={uploadFileHandler}></input>
+                {uploading && <div>Uploading...</div>}
               </li>
               <li className="form--entry">
                 <label htmlFor="category">Category</label>
