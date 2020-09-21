@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import userRoute from "./routes/UserRoute";
 import productRoute from "./routes/ProductRoute";
 import orderRoute from "./routes/OrderRoute";
+import uploadRoute from "./routes/UploadRoute";
 import path from "path";
 
 dotenv.config();
@@ -25,6 +26,8 @@ mongoose
 const app = express();
 app.use(bodyParser.json());
 
+app.use("/api/uploads", uploadRoute);
+
 app.use("/api/users", userRoute);
 
 app.use("/api/products", productRoute);
@@ -33,6 +36,12 @@ app.use("/api/orders", orderRoute);
 
 app.get("/api/config/paypal", (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
+});
+
+app.use("/uploads", express.static(path.join(__dirname, "/../uploads")));
+app.use(express.static(path.join(__dirname, "/../client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
 });
 
 if (process.env.NODE_ENV === "production") {
