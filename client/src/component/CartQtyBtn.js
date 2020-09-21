@@ -9,7 +9,9 @@ const CartQtyBtn = ({ item }) => {
     dispatch(addToCart(item.product, 1));
   };
   const decrement = () => {
-    dispatch(removeFromCart(item.product, 1));
+    if (item.quantity > 1) {
+      dispatch(removeFromCart(item.product, 1));
+    }
   };
   return (
     <div className="cart__item__quantity-btn">

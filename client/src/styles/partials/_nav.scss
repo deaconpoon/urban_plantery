@@ -17,6 +17,9 @@
       padding: 22px;
       border-right: $link-underline;
       background-color: $white;
+      &:active {
+        outline: none;
+      }
     }
     &--3 {
       width: 100%;
@@ -30,6 +33,9 @@
       padding: 22px;
       border-left: $link-underline;
       background-color: $white;
+      &:active {
+        outline: none;
+      }
     }
   }
   &__logo {

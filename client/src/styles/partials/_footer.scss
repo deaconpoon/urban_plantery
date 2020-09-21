@@ -1,4 +1,9 @@
 .footer {
+  &__margin {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 6em;
+  }
   &__container {
     margin-top: $section-bottom;
     @include tablet() {

@@ -88,7 +88,7 @@
   }
   &__body {
     &__container {
-      margin-bottom: $section-bottom;
+      margin-bottom: $body-bottom;
       @include tablet() {
         display: flex;
         justify-content: space-between;

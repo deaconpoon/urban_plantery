@@ -18,7 +18,7 @@ const NewProduct = () => {
   console.log(products);
   return (
     <div className="new-product">
-      <div className="section">
+      <div className="new-product__section">
         <h2 className="sub-title">New products</h2>
         <ul className="products">
           {products.slice(0, 3).map((product) => (

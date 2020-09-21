@@ -37,7 +37,6 @@
   }
   &__detail {
     margin-top: $section-bottom;
-    margin-bottom: $section-bottom;
 
     &__image {
       height: 600px;
@@ -46,6 +45,9 @@
 
       @include tablet() {
         max-height: 800px;
+      }
+      @include desktop() {
+        height: 100%;
       }
     }
     @include tablet() {
@@ -130,4 +132,8 @@
 }
 .new-product {
   margin-bottom: $section-bottom;
+  &__section {
+    width: 90%;
+    margin: auto;
+  }
 }

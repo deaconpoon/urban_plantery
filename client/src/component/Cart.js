@@ -35,7 +35,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
             <div className="cart__header__wrapper">
               <header className="cart__header">
                 <div className="cart__header__container"></div>
-                <div
+                <button
                   onClick={() => setIsOpen(!isOpen)}
                   className="cart__header__container--2"
                 >
@@ -44,7 +44,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                     src={cross}
                     alt="cross-btn"
                   ></img>
-                </div>
+                </button>
               </header>
             </div>
             <div className="cart__body__wrapper">
@@ -88,9 +88,7 @@ const Cart = ({ isOpen, setIsOpen, props }) => {
                   <div className="cart__body__items">
                     <div className="cart__body__items--text">Subtotal</div>
                     <div className="cart__body__items--amount">
-                      {cartItems.length <= 1
-                        ? cartItems[0].quantity
-                        : cartItems.reduce((a, c) => a + c.quantity, 0)}
+                      {cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </div>
                   </div>
                   <div className="cart__body__shipping">

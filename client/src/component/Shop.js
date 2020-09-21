@@ -49,23 +49,23 @@ const Shop = (props) => {
     dispatch(listProducts(category, sortOrder));
   };
 
-  return loading ? (
-    <div> Loading... </div>
-  ) : error ? (
-    <div> {error} </div>
-  ) : (
+  return (
     <div className="section">
       <div className="shop">
         <section className="shop__header">
           <div className="shop__header__container">
-            <div className="shop__header__title">Pet Friendly Plants</div>
+            <div className="shop__header__title">
+              Shop for your favorite plant
+            </div>
             <div className="shop__header__text">
-              Make sure your pet don't yo plants Make sure your pet don't yo
-              plantsMake sure your pet don't yo plants
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </div>
           </div>
           <div className="shop__header__container--2">
-            <div className="shop__header__container--3">
+            {/*  <div className="shop__header__container--3">
               <label htmlFor="sortOrder" className="shop__header__sort">
                 Sort by
               </label>
@@ -78,7 +78,7 @@ const Shop = (props) => {
                 <option value="lowest">Lowest</option>
                 <option value="highest">Highest</option>
               </select>
-            </div>
+            </div> */}
           </div>
         </section>
         <div className="shop__body__container">

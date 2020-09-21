@@ -34,6 +34,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
 
   const history = useHistory();
 
+  const handleRedirect = (url) => {
+    history.push(`/${url}`);
+    setMenuOpen(!menuOpen);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     history.push("/products?");
@@ -106,8 +110,18 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                   ></SideMenu>
                 </ul>
               </div>
-              <h2 className="menu__body__about menu__items">About</h2>
-              <h2 className="menu__body__contact menu__items">Contact</h2>
+              <h2
+                onClick={() => handleRedirect("about")}
+                className="menu__body__about menu__items"
+              >
+                About
+              </h2>
+              <h2
+                onClick={() => handleRedirect("contact")}
+                className="menu__body__contact menu__items"
+              >
+                Contact
+              </h2>
             </div>
           </div>
         </session>

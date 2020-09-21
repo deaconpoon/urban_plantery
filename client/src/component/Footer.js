@@ -10,7 +10,7 @@ const Footer = () => {
     history.push("/");
   };
   return (
-    <footer className="section">
+    <footer className="footer__margin">
       <div className="footer">
         <div className="footer__container">
           <div className="footer__logo">
