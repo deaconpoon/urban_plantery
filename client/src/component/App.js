@@ -53,7 +53,17 @@ const App = () => {
           <Route path="/contact" component={Contact}></Route>
           <Route path="/register" component={RegisterUser}></Route>
           <Route path="/signin" component={SignInUser}></Route>
-          <Route path="/products/:id" component={Product}></Route>
+
+          <Route
+            path="/products/:id"
+            render={(props) => (
+              <Product
+                {...props}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+              ></Product>
+            )}
+          ></Route>
           <Route path="/shipping" component={Shipping}></Route>
           <Route path="/payment" component={Payment}></Route>
           <Route path="/placeorder" component={PlaceOrder}></Route>
