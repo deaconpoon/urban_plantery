@@ -13,8 +13,8 @@ http://www.urban-plantery.com/
 - Create and sign in user account with JWT encryption.
 - Admin account with full content access and customization.
 - Order management feature with ability to edit and delete orders.
-- Product management feature with ability to create, edite and delete products.
-- Lots of ovely plants that will put a smile on your face 😊.
+- Product management feature with ability to create, edit and delete products.
+- Lots of lovely plants that will put a smile on your face 😊.
 
 ## 🤖 Under the hood
 
